@@ -1,0 +1,53 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.car": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "sold": "query.variant == 1"
+                        }
+                    ]
+                },
+                "sold": {
+                    "on_entry": [
+                        "/execute if entity @s[type=bridge:car] run scoreboard players add dummy money 100"
+                    ],
+                    "transitions": [
+                        {
+                            "buy_car": "query.variant == 2"
+                        }
+                    ]
+                },
+                "buy_car": {
+                    "on_entry": [
+                        "/say selected car"
+                    ],
+                    "transitions": [
+                        {
+                            "paid_car": "query.variant == 3"
+                        }
+                    ]
+                },
+                "paid_car": {
+                    "on_entry": [
+                        "/say paid"
+                    ],
+                    "transitions": [
+                        {
+                            "leaving_store": "query.variant == 4"
+                        }
+                    ]
+                },
+                "leaving_store": {
+                    "on_entry": [
+                        "/say bye"
+                    ]
+                }
+            }
+        }
+    }
+}

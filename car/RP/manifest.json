@@ -1,0 +1,42 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"CreatorGames_KOzs"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.14"
+			],
+			"dash": [
+				"github:bridge-core/dash-compiler#8fa35c73292f6382747d0f411fca26431a6d2c8e"
+			]
+		}
+	},
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"min_engine_version": [
+			1,
+			20,
+			60
+		],
+		"uuid": "13d56e9d-e8d2-41ed-994c-aa63402d9947",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "f428f70a-ed44-4ab3-969c-5aad157e102c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

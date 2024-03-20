@@ -1,0 +1,56 @@
+{
+    "namespace": "money",
+    "money_image": {
+        "type": "image",
+        "texture": "textures/ui/money-sheet",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "uv": "@money.image_uv_animation",
+        "uv_size": [
+            254,
+            144
+        ],
+        "controls": [
+            {
+                "money_text": {
+                    "type": "label",
+                    "text": "#player_score_sidebar",
+                    "anchor_from": "center",
+                    "anchor_to": "left_middle",
+                    "offset": [
+                        -10,
+                        3
+                    ],
+                    "shadow": false,
+                    "color": "green",
+                    "font_type": "normal",
+                    "layer": 1,
+                    "localize": false,
+                    "bindings": [
+                        {
+                            "binding_name": "#player_score_sidebar",
+                            "binding_type": "collection",
+                            "binding_collection_name": "scoreboard_scores"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#player_score_sidebar * 1)",
+                            "target_property_name": "#score"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "image_uv_animation": {
+        "anim_type": "aseprite_flip_book",
+        "initial_uv": [
+            0,
+            0
+        ]
+    }
+}

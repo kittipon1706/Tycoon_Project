@@ -1,0 +1,149 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:car",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "car": "controller.animation.car"
+            },
+            "scripts": {
+                "animate": [
+                    "car"
+                ]
+            }
+        },
+        "component_groups": {
+            "bridge:sellable": {
+                "minecraft:type_family": {
+                    "family": [
+                        "onsell_car",
+                        "car",
+                        "mob"
+                    ]
+                }
+            },
+            "bridge:rideable": {
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.horse",
+                    "family_types": [
+                        "player"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.4,
+                            0.8,
+                            0.0
+                        ]
+                    }
+                }
+            },
+            "bridge:on_sold": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:on_stolen": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:on_remove": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "on_damage": {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "customer"
+                        },
+                        "event": "bridge:sold",
+                        "target": "self"
+                    }
+                }
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "interact_text": "action.interact.ride.horse",
+                "family_types": [
+                    "player"
+                ],
+                "seats": {
+                    "position": [
+                        0.4,
+                        0.8,
+                        0.0
+                    ]
+                }
+            },
+            "minecraft:collision_box": {
+                "width": 3,
+                "height": 2
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:input_ground_controlled": {},
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:type_family": {
+                "family": [
+                    "car",
+                    "mob"
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:set_car_sell": {
+                "add": {
+                    "component_groups": [
+                        "bridge:sellable"
+                    ]
+                }
+            },
+            "bridge:sold": {
+                "add": {
+                    "component_groups": [
+                        "bridge:on_sold"
+                    ]
+                }
+            }
+        }
+    }
+}

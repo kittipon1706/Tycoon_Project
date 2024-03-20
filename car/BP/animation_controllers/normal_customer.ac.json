@@ -1,0 +1,55 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.normal_customer": {
+            "initial_state": "into_store",
+            "states": {
+                "into_store": {
+                    "on_entry": [
+                        "/say hi"
+                    ],
+                    "transitions": [
+                        {
+                            "waiting_queue": "query.variant == 1"
+                        }
+                    ]
+                },
+                "waiting_queue": {
+                    "on_entry": [
+                        "/say waiting for queue"
+                    ],
+                    "transitions": [
+                        {
+                            "buy_car": "query.variant == 2"
+                        }
+                    ]
+                },
+                "buy_car": {
+                    "on_entry": [
+                        "/say selecting car"
+                    ],
+                    "transitions": [
+                        {
+                            "paid_car": "query.variant == 3"
+                        }
+                    ]
+                },
+                "paid_car": {
+                    "on_entry": [
+                        "/say paid"
+                    ],
+                    "transitions": [
+                        {
+                            "leaving_store": "query.variant == 4"
+                        }
+                    ]
+                },
+                "leaving_store": {
+                    "on_entry": [
+                        "/say thank you"
+                    ]
+                }
+            }
+        }
+    }
+}

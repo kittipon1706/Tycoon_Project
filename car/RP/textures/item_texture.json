@@ -1,0 +1,12 @@
+{
+	"resource_pack_name": "car",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"car_brochure": {
+			"textures": "textures/items/car_brochure"
+		},
+		"salesman_brochure": {
+			"textures": "textures/items/salesman_brochure"
+		}
+	}
+}

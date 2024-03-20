@@ -1,0 +1,99 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"mob.salesman_01.death": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/death"
+			]
+		},
+		"mob.salesman_01.haggle": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/haggle1",
+				"sounds/mob/villager/haggle2",
+				"sounds/mob/villager/haggle3"
+			]
+		},
+		"mob.salesman_01.hit": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/hit1",
+				"sounds/mob/villager/hit2",
+				"sounds/mob/villager/hit3",
+				"sounds/mob/villager/hit4"
+			]
+		},
+		"mob.salesman_01.idle": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/idle1",
+				"sounds/mob/villager/idle2",
+				"sounds/mob/villager/idle3"
+			]
+		},
+		"mob.salesman_01.no": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/no1",
+				"sounds/mob/villager/no2",
+				"sounds/mob/villager/no3"
+			]
+		},
+		"mob.salesman_01.yes": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/yes1",
+				"sounds/mob/villager/yes2",
+				"sounds/mob/villager/yes3"
+			]
+		},
+		"mob.normal_customer.death": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/death"
+			]
+		},
+		"mob.normal_customer.haggle": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/haggle1",
+				"sounds/mob/villager/haggle2",
+				"sounds/mob/villager/haggle3"
+			]
+		},
+		"mob.normal_customer.hit": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/hit1",
+				"sounds/mob/villager/hit2",
+				"sounds/mob/villager/hit3",
+				"sounds/mob/villager/hit4"
+			]
+		},
+		"mob.normal_customer.idle": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/idle1",
+				"sounds/mob/villager/idle2",
+				"sounds/mob/villager/idle3"
+			]
+		},
+		"mob.normal_customer.no": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/no1",
+				"sounds/mob/villager/no2",
+				"sounds/mob/villager/no3"
+			]
+		},
+		"mob.normal_customer.yes": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/villager/yes1",
+				"sounds/mob/villager/yes2",
+				"sounds/mob/villager/yes3"
+			]
+		}
+	}
+}
