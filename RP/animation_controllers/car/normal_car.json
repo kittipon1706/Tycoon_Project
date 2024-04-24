@@ -1,0 +1,92 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.normal_car": {
+            "initial_state": "stop",
+            "states": {
+                "stop": {
+                    "transitions": [
+                        {
+                            "moving": "query.ground_speed"
+                        },
+                        {
+                            "unlocking": "query.variant == 2"
+                        }
+                    ]
+                },
+                "moving": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "stop": "!query.ground_speed"
+                        }
+                        // {
+                        //     "on_turn_left_start": ""
+                        // },
+                        // {
+                        //     "on_turn_right_start": ""
+                        // }
+                    ]
+                },
+                "unlocking": {
+                    "animations": [
+                        "fix"
+                    ],
+                    "transitions": [
+                        {
+                            "stop": "query.variant == 3"
+                        }
+                    ]
+                }
+                // "on_turn_left_start": {
+                //     "animations": [
+                //         "turn_left_start"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "on_turn_left_hold": "",
+                //             "on_idle": "",
+                //             "on_move": ""
+                //         }
+                //     ]
+                // },
+                // "on_turn_left_hold": {
+                //     "animations": [
+                //         "turn_left_hold"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "on_move": "",
+                //             "on_idle": ""
+                //         }
+                //     ]
+                // },
+                // "on_turn_right_start": {
+                //     "animations": [
+                //         "turn_right_start"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "on_turn_right_hold": "",
+                //             "on_idle": "",
+                //             "on_move": ""
+                //         }
+                //     ]
+                // },
+                // "on_turn_right_hold": {
+                //     "animations": [
+                //         "turn_right_hold"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "on_move": "",
+                //             "on_idle": ""
+                //         }
+                //     ]
+                // }
+            }
+        }
+    }
+}

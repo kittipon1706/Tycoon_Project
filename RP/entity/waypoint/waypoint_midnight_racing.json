@@ -1,0 +1,25 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:waypoint_midnight_racing",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/waypoint/waypoint_midnight_racing"
+            },
+            "geometry": {
+                "default": "geometry.waypoint_midnight_racing"
+            },
+            "render_controllers": [
+                "controller.render.waypoint_midnight_racing"
+            ],
+            "scripts": {},
+            "spawn_egg": {
+                "base_color": "#06BDE2",
+                "overlay_color": "#161616"
+            }
+        }
+    }
+}

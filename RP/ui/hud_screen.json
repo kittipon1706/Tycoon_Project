@@ -1,0 +1,210 @@
+{
+    "namespace": "hud",
+    "hud_title_text": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "offset": [
+            0,
+            -19
+        ],
+        "layer": 1,
+        "alpha": "@hud.my_anim_title_text_alpha_in",
+        "propagate_alpha": true,
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#hud_title_text_string - @@) = #hud_title_text_string)",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "title_frame": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "title_background": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 30px",
+                                    "100%sm + 6px"
+                                ],
+                                "texture": "textures/ui/hud_tip_text_background",
+                                "alpha": "@hud.anim_title_background_alpha_in"
+                            }
+                        },
+                        {
+                            "title_1_image": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 300px",
+                                    "100%sm + 100px"
+                                ],
+                                "texture": "textures/ui/number/one_number",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "layer": 1,
+                                "offset": [
+                                    0,
+                                    6
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view", // make this a viewing binding
+                                        "source_property_name": "(#text = 'systemUI_one_show')", // detect when the title text string is not equal to "hello world"
+                                        "target_property_name": "#visible" // override the #visibility property depending on if "source_property_name" is true or false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "title_2_image": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 300px",
+                                    "100%sm + 100px"
+                                ],
+                                "texture": "textures/ui/number/two_number",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "layer": 1,
+                                "offset": [
+                                    0,
+                                    6
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view", // make this a viewing binding
+                                        "source_property_name": "(#text = 'systemUI_two_show')", // detect when the title text string is not equal to "hello world"
+                                        "target_property_name": "#visible" // override the #visibility property depending on if "source_property_name" is true or false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "title_3_image": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 300px",
+                                    "100%sm + 100px"
+                                ],
+                                "texture": "textures/ui/number/three_number",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "layer": 1,
+                                "offset": [
+                                    0,
+                                    6
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#text = 'systemUI_three_show')",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "title": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "color": "$title_command_text_color",
+                                "text": "#text",
+                                "layer": 1,
+                                "localize": false,
+                                "font_size": "extra_large",
+                                "variables": [
+                                    {
+                                        "requires": "(not $title_shadow)",
+                                        "$show_shadow": false
+                                    },
+                                    {
+                                        "requires": "$title_shadow",
+                                        "$show_shadow": true
+                                    }
+                                ],
+                                "shadow": "$show_shadow",
+                                "text_alignment": "center",
+                                "offset": [
+                                    0,
+                                    6
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not(#text = 'systemUI_one_show') and not(#text = 'systemUI_two_show')) and not(#text = 'systemUI_three_show'))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "quest_panel@all_quest.quest_panel": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "my_anim_title_text_alpha_in": {
+        "anim_type": "alpha",
+        "easing": "linear",
+        "duration": 0.2,
+        "from": 0,
+        "to": 1,
+        "next": "@hud.my_anim_title_text_alpha_stay"
+    },
+    "my_anim_title_text_alpha_stay": {
+        "anim_type": "wait",
+        "duration": 0.6,
+        "next": "@hud.my_anim_title_text_alpha_out"
+    },
+    "my_anim_title_text_alpha_out": {
+        "anim_type": "alpha",
+        "easing": "linear",
+        "duration": 0.2,
+        "from": 1,
+        "to": 0,
+        "destroy_at_end": "hud_title_text",
+        "end_event": "hud_title_text_complete"
+    }
+}

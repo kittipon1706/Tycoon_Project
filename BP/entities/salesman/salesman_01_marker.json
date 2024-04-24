@@ -1,0 +1,97 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:salesman_01_marker",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"salesman_01_marker",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:interact": {
+				"interactions": {
+					"on_interact": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "bridge:salesman1_egg"
+								}
+							]
+						},
+						"event": "bridge:set_salesman",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:set_salesman": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": "/summon bridge:salesman_01 46 -36 163 270"
+						}
+					},
+					{
+						"run_command": {
+							"command": "/scoreboard players set dummy st1_main2_clear 1"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"bridge:set_despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

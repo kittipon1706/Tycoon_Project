@@ -1,0 +1,73 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.waypoint_midnight_racing": {
+            "initial_state": "on_start",
+            "states": {
+                "on_start": {
+                    "on_entry": [],
+                    "transitions": [
+                        // {
+                        //     "on_last_set": "query.variant == 1"
+                        // },
+                        // {
+                        //     "on_fist_set": "query.variant == 3"
+                        // },
+                        {
+                            "on_detect": "query.variant == 4"
+                        }
+                    ]
+                },
+                "on_detect": {
+                    "on_entry": [
+                        "/scoreboard players add dummy MN_objective_enemy 1"
+                    ]
+                },
+                "on_last_set": {
+                    "on_entry": [
+                        "/tag @s add theLast",
+                        "/say set Last"
+                    ],
+                    "transitions": [
+                        {
+                            "on_last_detect": "query.variant == 2"
+                        }
+                    ]
+                },
+                "on_last_detect": {
+                    "on_entry": [
+                        "/event entity @e[family=waypoint_midnight_racing1,tag=!theLast] bridge:reset",
+                        "/say on_last_detect"
+                    ],
+                    "transitions": [
+                        {
+                            "on_last_set": "query.variant == 1"
+                        }
+                    ]
+                },
+                "on_fist_set": {
+                    "on_entry": [
+                        "/tag @s add theFirst",
+                        "/say set Fisrt"
+                    ],
+                    "transitions": [
+                        {
+                            "on_first_detect": "query.variant == 4"
+                        }
+                    ]
+                },
+                "on_first_detect": {
+                    "on_entry": [
+                        "/event entity @e[family=waypoint_midnight_racing1,tag=!theFirst] bridge:reset",
+                        "/say on_first_detect"
+                    ],
+                    "transitions": [
+                        {
+                            "on_fist_set": "query.variant == 3"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

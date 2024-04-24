@@ -1,0 +1,6 @@
+{
+    "ui_defs": [
+        "ui/money.json",
+        "ui/quest.json"
+    ]
+}

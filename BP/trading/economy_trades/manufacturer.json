@@ -1,0 +1,52 @@
+{
+    "tiers": [
+        {
+            "groups": [
+                {
+                    "num_to_select": 1,
+                    "trades": [
+                        {
+                            "wants": [
+                                {
+                                    "item": "minecraft:emerald",
+                                    "quantity": 2000
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "bridge:keys_car1"
+                                }
+                            ],
+                            "trader_exp": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "total_exp_required": 28,
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "emerald",
+                            "quantity": {
+                                "min": 4,
+                                "max": 6
+                            }
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "bridge:car_brochure",
+                            "quantity": {
+                                "min": 4,
+                                "max": 6
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

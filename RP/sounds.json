@@ -1,0 +1,54 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"bridge:salesman_01": {
+				"volume": 1,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.salesman_01.idle",
+					"hurt": "mob.salesman_01.hit",
+					"death": "mob.salesman_01.death",
+					"death.to.zombie": "mob.salesman_01.death",
+					"haggle": "mob.salesman_01.haggle",
+					"haggle.yes": "mob.salesman_01.yes",
+					"haggle.no": "mob.salesman_01.no"
+				}
+			},
+			"bridge:manufacturer": {
+				"volume": 1,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.manufacturer.idle",
+					"hurt": "mob.manufacturer.hit",
+					"death": "mob.manufacturer.death",
+					"death.to.zombie": "mob.manufacturer.death",
+					"haggle": "mob.manufacturer.haggle",
+					"haggle.yes": "mob.manufacturer.yes",
+					"haggle.no": "mob.manufacturer.no"
+				}
+			},
+			"bridge:test_villager": {
+				"volume": 1,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.test_villager.idle",
+					"hurt": "mob.test_villager.hit",
+					"death": "mob.test_villager.death",
+					"death.to.zombie": "mob.test_villager.death",
+					"haggle": "mob.test_villager.haggle",
+					"haggle.yes": "mob.test_villager.yes",
+					"haggle.no": "mob.test_villager.no"
+				}
+			}
+		}
+	}
+}

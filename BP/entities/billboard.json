@@ -1,0 +1,94 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:billboard",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:is_old": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"bridge:is_altered": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:interact": {
+				"interactions": {
+					"use_item": true,
+					"on_interact": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "bridge:spray"
+								}
+							]
+						},
+						"event": "bridge:set_altered",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"billboard",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 12,
+				"height": 6
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"bridge:set_old": {
+				"add": {
+					"component_groups": [
+						"bridge:is_old"
+					]
+				}
+			},
+			"bridge:set_altered": {
+				"add": {
+					"component_groups": [
+						"bridge:is_altered"
+					]
+				}
+			}
+		}
+	}
+}

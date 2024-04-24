@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "manufacturer_diag",
+                "npc_name": "Manufacturer",
+                "text": "Welcome to manufacturer's warehouse",
+                "buttons": [
+                    {
+                        "name": "Car brochure",
+                        "commands": [
+                            "/give @initiator bridge:car_brochure",
+                            "/say you got it!!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

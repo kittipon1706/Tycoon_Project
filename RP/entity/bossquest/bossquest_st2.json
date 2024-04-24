@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:bossquest_st2",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/bossquest/bossquest_tex"
+            },
+            "geometry": {
+                "default": "geometry.keyquest"
+            },
+            "animations": {
+                "state_controller": "controller.animation.keyquest",
+                "idle": "animation.keyquest.idle"
+            },
+            "render_controllers": [
+                "controller.render.keyquest_st1"
+            ],
+            "spawn_egg": {
+                "base_color": "#DF1B09",
+                "overlay_color": "#FFFFFF"
+            },
+            "scripts": {
+                "animate": [
+                    "state_controller"
+                ]
+            }
+        }
+    }
+}

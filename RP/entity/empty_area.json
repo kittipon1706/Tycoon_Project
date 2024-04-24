@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:empty_area",
+			"materials": {
+				"default": "entity_beam_additive"
+			},
+			"textures": {
+				"default": "textures/entity/empty_area_tex"
+			},
+			"geometry": {
+				"default": "geometry.empty_area"
+			},
+			"animations": {
+				"state_controller": "controller.animation.empty_area.general",
+				"idle": "animation.empty_area.idle"
+			},
+			"render_controllers": [
+				"controller.render.empty_area"
+			],
+			"spawn_egg": {
+				"base_color": "#35E469",
+				"overlay_color": "#FFFFFF"
+			},
+			"scripts": {
+				"animate": [
+					"state_controller"
+				]
+			}
+		}
+	}
+}

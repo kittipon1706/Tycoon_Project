@@ -1,8 +1,0 @@
-pack.name=car RP
-pack.description=
-entity.bridge:car.name =Car
-item.spawn_egg.entity.bridge:car.name =Car Egg
-item.spawn_egg.entity.bridge:salesman_01.name=Spawn Salesman 1
-entity.bridge:salesman_01.name=Salesman 1
-item.spawn_egg.entity.bridge:normal_customer.name=Spawn Normal Customer
-entity.bridge:normal_customer.name=Normal Customer

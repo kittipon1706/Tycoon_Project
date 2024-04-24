@@ -1,0 +1,25 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "MN_racer_diag",
+                "npc_name": "mysterious street racer",
+                "text": "Challenge me!!!",
+                "buttons": [
+                    {
+                        "name": "Yes",
+                        "commands": [
+                            "/function stage1/The_Midnight_Racer/on_start_MN",
+                            "/event entity @e[family=MN,c=1] bridge:remove_npc"
+                        ]
+                    },
+                    {
+                        "name": "No",
+                        "commands": []
+                    }
+                ]
+            }
+        ]
+    }
+}

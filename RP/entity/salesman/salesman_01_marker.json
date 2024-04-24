@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:salesman_01_marker",
+			"materials": {
+				"default": "entity_beam_additive"
+			},
+			"textures": {
+				"default": "textures/entity/salesman/salesman_01"
+			},
+			"geometry": {
+				"default": "geometry.salesman_01"
+			},
+			"scripts": {
+				"scale": 1
+			},
+			"render_controllers": [
+				"controller.render.salesman_01"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

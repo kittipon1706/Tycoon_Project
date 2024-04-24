@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:bodyguard_2",
+			"materials": {
+				"default": "villager"
+			},
+			"textures": {
+				"default": "textures/entity/npc_quest/MN_racer_tex"
+			},
+			"geometry": {
+				"default": "geometry.customer_1"
+			},
+			"scripts": {
+				"scale": 1
+			},
+			"animations": {
+				"general": "animation.villager.general",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.villager.move",
+				"raise_arms": "animation.villager.raise_arms"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.villager.general"
+				},
+				{
+					"move": "controller.animation.villager.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.customer_1"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

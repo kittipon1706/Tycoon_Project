@@ -1,0 +1,310 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:normal_car3",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "car": "controller.animation.normal_car"
+            },
+            "scripts": {
+                "animate": [
+                    "car"
+                ]
+            },
+            "runtime_identifier": "bridge:normal_car3"
+        },
+        "component_groups": {
+            "bridge:set_despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:ridder_controlable": {
+                "minecraft:input_ground_controlled": {}
+            },
+            "bridge:is_MN_player_car": {
+                "minecraft:type_family": {
+                    "family": [
+                        "MN_player_car"
+                    ]
+                }
+            },
+            "bridge:is_MN_enemy_car": {
+                "minecraft:type_family": {
+                    "family": [
+                        "MN_enemy_car"
+                    ]
+                }
+            },
+            "bridge:moveable": {
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+            "bridge:not_moveable": {
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "bridge:car_path_finding": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 0,
+                    "reselect_targets": true,
+                    "target_search_height": 1000,
+                    "within_radius": 1000,
+                    "must_see": false,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "waypoint_midnight_racing_true"
+                            },
+                            "max_dist": 1000
+                        }
+                    ]
+                },
+                "minecraft:behavior.move_towards_target": {
+                    "priority": 2,
+                    "speed_multiplier": 0.2,
+                    "within_radius": 2000
+                },
+                "minecraft:attack": {
+                    "damage": 0
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 0,
+                    "require_complete_path": true,
+                    "track_target": true
+                },
+                "minecraft:follow_range": {
+                    "value": 1000,
+                    "max": 1000
+                }
+            },
+            "bridge:sellable": {
+                "minecraft:type_family": {
+                    "family": [
+                        "onsell_car",
+                        "normal_car3",
+                        "car",
+                        "mob"
+                    ]
+                }
+            },
+            "bridge:my_sellable": {
+                "minecraft:type_family": {
+                    "family": [
+                        "onsell_car",
+                        "my_onsell_car",
+                        "normal_car3",
+                        "car",
+                        "mob"
+                    ]
+                }
+            },
+            "bridge:rideable": {
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.car",
+                    "family_types": [
+                        "MN",
+                        "player"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.4,
+                            0.8,
+                            0.0
+                        ]
+                    }
+                }
+            },
+            "bridge:on_sold": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "mob"
+                    ]
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.8,
+                    "time_down_event": {
+                        "event": "bridge:despawn"
+                    }
+                }
+            },
+            "bridge:on_stolen": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:on_despawn": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:knockback_resistance": {
+                "value": 100
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "customer1_paid"
+                            },
+                            "event": "bridge:sold",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "cause": "all",
+                        "deals_damage": false,
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            }
+                        }
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0.5
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "can_pass_doors": true,
+                "can_open_doors": true,
+                "avoid_water": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:collision_box": {
+                "width": 3,
+                "height": 2
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:type_family": {
+                "family": [
+                    "car",
+                    "normal_car3",
+                    "mob"
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:despawn": {
+                "add": {
+                    "component_groups": [
+                        "bridge:set_despawn"
+                    ]
+                }
+            },
+            "bridge:set_rideable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_sellable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:sellable"
+                    ]
+                }
+            },
+            "bridge:set_my_sellable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:my_sellable"
+                    ]
+                }
+            },
+            "bridge:sold": {
+                "add": {
+                    "component_groups": [
+                        "bridge:on_sold"
+                    ]
+                }
+            },
+            "bridge:set_path": {
+                "add": {
+                    "component_groups": [
+                        "bridge:car_path_finding"
+                    ]
+                }
+            },
+            "bridge:set_can_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:moveable"
+                    ]
+                }
+            },
+            "bridge:set_can_not_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:not_moveable"
+                    ]
+                }
+            },
+            "bridge:set_family_MN_player": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_MN_player_car",
+                        "bridge:not_moveable",
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_family_MN_enemy": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_MN_enemy_car",
+                        "bridge:not_moveable"
+                    ]
+                }
+            },
+            "bridge:set_ridder_control": {
+                "add": {
+                    "component_groups": [
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            }
+        }
+    }
+}

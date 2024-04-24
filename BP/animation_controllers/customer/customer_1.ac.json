@@ -1,0 +1,55 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.customer_1": {
+            "initial_state": "into_store",
+            "states": {
+                "into_store": {
+                    "on_entry": [
+                        //"/say hi"
+                    ],
+                    "transitions": [
+                        {
+                            "waiting_queue": "query.variant == 1"
+                        }
+                    ]
+                },
+                "waiting_queue": {
+                    "on_entry": [
+                        // "/say waiting_queue"
+                    ],
+                    "transitions": [
+                        {
+                            "on_queue": "query.variant == 2"
+                        }
+                    ]
+                },
+                "on_queue": {
+                    "on_entry": [
+                        //"/say on_queue"
+                    ],
+                    "transitions": [
+                        {
+                            "paid_car": "query.variant == 3"
+                        }
+                    ]
+                },
+                "paid_car": {
+                    "on_entry": [
+                        //"/say on_paid"
+                    ],
+                    "transitions": [
+                        {
+                            "leaving_store": "query.variant == 4"
+                        }
+                    ]
+                },
+                "leaving_store": {
+                    "on_entry": [
+                        "/replaceitem entity @s slot.weapon.mainhand 1 bridge:keys_car1"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"bridge:mystery_button": {
+		"sound": "stone"
+	},
+	"bridge:test_1": {
+		"sound": "stone"
+	},
+	"bridge:test_2": {
+		"sound": "stone"
+	},
+	"bridge:shop_shelf": {
+		"sound": "stone"
+	}
+}

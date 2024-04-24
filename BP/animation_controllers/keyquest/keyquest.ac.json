@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.keyquest_st1": {
+            "initial_state": "quest_not_start",
+            "states": {
+                "quest_not_start": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "quest_start": "query.variant == 1"
+                        }
+                    ]
+                },
+                "quest_start": {
+                    "on_entry": [
+                        "/give @p bridge:salesman_brochure"
+                    ],
+                    "transitions": [
+                        {
+                            "quest_not_start": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

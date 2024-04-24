@@ -1,0 +1,12 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "MN_racer_clear_diag",
+                "npc_name": "mysterious street racer",
+                "text": "nice!!!"
+            }
+        ]
+    }
+}

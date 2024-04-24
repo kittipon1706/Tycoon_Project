@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "bridge:boxing_gloves",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/items/boxing_gloves"
+			},
+			"geometry": {
+				"default": "geometry.boxing_gloves"
+			},
+			"render_controllers": [
+				"controller.render.item_default"
+			],
+			"animations": {
+				"hold_first_person_main": "animation.wiki.first_person_guide.right_hand",
+				"hold_first_person_off": "animation.wiki.first_person_guide.left_hand",
+				"hold_third_person_main": "animation.wiki.third_person_guide",
+				"hold_third_person_off": "animation.wiki.third_person_offhand"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"hold_first_person_main": "context.is_first_person == 1.0 && context.item_slot == 'main_hand'"
+					},
+					{
+						"hold_first_person_off": "context.is_first_person == 1.0 && context.item_slot == 'off_hand'"
+					},
+					{
+						"hold_third_person_main": "context.is_first_person == 0.0 && context.item_slot == 'main_hand'"
+					},
+					{
+						"hold_third_person_off": "context.is_first_person == 0.0 && context.item_slot == 'off_hand'"
+					}
+				]
+			}
+		}
+	}
+}

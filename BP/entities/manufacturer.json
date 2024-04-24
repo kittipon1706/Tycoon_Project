@@ -1,0 +1,74 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:manufacturer",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "bridge:manufacturer",
+			"animations": {
+				"manufacturer": "controller.animation.manufacturer"
+			},
+			"scripts": {
+				"animate": [
+					"manufacturer"
+				]
+			}
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:npc": {},
+			"minecraft:economy_trade_table": {
+				"display_name": "Car trader",
+				"table": "trading/economy_trades/manufacturer.json",
+				"new_screen": true
+			},
+			"minecraft:behavior.trade_with_player": {
+				"priority": 1
+			},
+			"minecraft:type_family": {
+				"family": [
+					"manufacturer",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.5
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 8,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 8
+			}
+		},
+		"events": {}
+	}
+}

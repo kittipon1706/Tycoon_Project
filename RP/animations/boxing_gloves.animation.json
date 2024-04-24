@@ -1,0 +1,156 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.wiki.third_person_guide": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						-6,
+						-9,
+						-1
+					]
+				},
+				"leftItem": {
+					"position": [
+						6,
+						-9,
+						-1
+					]
+				},
+				"bone": {
+					"rotation": [
+						180,
+						90,
+						0
+					],
+					"position": [
+						0,
+						26,
+						0
+					],
+					"scale": 0.8
+				}
+			}
+		},
+		"animation.wiki.third_person_offhand": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						-6,
+						-9,
+						-1
+					]
+				},
+				"leftItem": {
+					"position": [
+						6,
+						-9,
+						-1
+					]
+				},
+				"bone": {
+					"rotation": [
+						180,
+						90,
+						0
+					],
+					"position": [
+						0,
+						26,
+						0
+					],
+					"scale": [
+						0.8,
+						0.8,
+						-0.8
+					]
+				}
+			}
+		},
+		"animation.wiki.first_person_guide.right_hand": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						95,
+						-45,
+						115
+					],
+					"position": [
+						13.5,
+						-10,
+						12
+					]
+				},
+				"rightItem": {
+					"position": [
+						-6,
+						-9,
+						-1
+					]
+				},
+				"bone": {
+					"rotation": [
+						-45,
+						-70,
+						45
+					],
+					"position": [
+						-0.59767,
+						28.24662,
+						3.75363
+					],
+					"scale": [
+						-1,
+						-1,
+						1
+					]
+				}
+			}
+		},
+		"animation.wiki.first_person_guide.left_hand": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						88.57002,
+						-26.79103,
+						73.03933
+					],
+					"position": [
+						-19,
+						-0.75,
+						10.5
+					]
+				},
+				"leftItem": {
+					"position": [
+						-6.7812,
+						-9.46595,
+						-3.85878
+					]
+				},
+				"bone": {
+					"rotation": [
+						131.61589,
+						14.11166,
+						-33.51112
+					],
+					"position": [
+						-17.5,
+						23,
+						10.5
+					],
+					"scale": [
+						1,
+						-1,
+						1
+					]
+				}
+			}
+		}
+	}
+}

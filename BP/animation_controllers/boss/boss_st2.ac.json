@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.boss_st2": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "death": "!query.is_alive"
+                        }
+                    ]
+                },
+                "death": {
+                    "on_entry": [
+                        "/say i am loss",
+                        "/scoreboard players set dummy Boss2_clear 1",
+                        "/function stage2/on_end_boss2"
+                    ]
+                }
+            }
+        }
+    }
+}

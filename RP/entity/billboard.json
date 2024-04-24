@@ -1,0 +1,25 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:billboard",
+			"materials": {
+				"default": "villager"
+			},
+			"textures": {
+				"type_1": "textures/entity/old_billboard_tex",
+				"type_2": "textures/entity/altered_billboard_tex"
+			},
+			"geometry": {
+				"default": "geometry.billboard_stage2"
+			},
+			"render_controllers": [
+				"controller.render.billboard"
+			],
+			"spawn_egg": {
+				"base_color": "#CF4EA4",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

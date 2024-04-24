@@ -1,0 +1,165 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:boss_stage2",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"boss_st2": "controller.animation.boss_st2"
+			},
+			"scripts": {
+				"animate": [
+					"boss_st2"
+				]
+			}
+		},
+		"component_groups": {
+			"bridge:on_death": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"bridge:attack_player": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"must_see": true,
+					"priority": 3,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_tag",
+										"subject": "other",
+										"value": "Boss2"
+									}
+								]
+							},
+							"max_dist": 100
+						}
+					],
+					"within_radius": 100
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 2,
+					"speed_multiplier": 0.1,
+					"within_radius": 200
+				},
+				"minecraft:attack": {
+					"damage": 10
+				},
+				"minecraft:behavior.delayed_attack": {
+					"attack_duration": 0.3,
+					"melee_fov": 90,
+					"cooldown_time": 1,
+					"priority": 1
+				},
+				"minecraft:movement": {
+					"value": 0.3
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:boss": {
+				"hud_range": 55,
+				"name": "local dealership magnate ",
+				"should_darken_sky": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"boss_stage2",
+					"mob"
+				]
+			},
+			"minecraft:inventory": {
+				"inventory_size": 8,
+				"private": true
+			},
+			"minecraft:equip_item": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false,
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"operator": "!=",
+										"subject": "other",
+										"value": "bridge:boxing_gloves"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.5
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"blocks_to_avoid": [
+					"grass_block"
+				],
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 8
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"bridge:set_attack_player": {
+				"add": {
+					"component_groups": [
+						"bridge:attack_player"
+					]
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,132 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.boxing_gloves",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"binding": "q.item_slot_to_bone_name(context.item_slot)",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.9,
+								4,
+								-3
+							],
+							"size": [
+								8,
+								6,
+								6
+							],
+							"uv": [
+								0,
+								11
+							]
+						},
+						{
+							"origin": [
+								-4,
+								9.02598,
+								-4.39838
+							],
+							"size": [
+								8,
+								4,
+								7
+							],
+							"pivot": [
+								0,
+								11.02598,
+								-0.89838
+							],
+							"rotation": [
+								15,
+								0,
+								0
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								3,
+								5,
+								-4.25
+							],
+							"size": [
+								3,
+								6,
+								4
+							],
+							"pivot": [
+								4.5,
+								8,
+								-1.5
+							],
+							"rotation": [
+								22.5,
+								0,
+								0
+							],
+							"uv": [
+								26,
+								7
+							]
+						},
+						{
+							"origin": [
+								-3,
+								0,
+								-3
+							],
+							"size": [
+								6,
+								4,
+								6
+							],
+							"uv": [
+								22,
+								17
+							]
+						},
+						{
+							"origin": [
+								-3.1,
+								-0.1,
+								-3.1
+							],
+							"size": [
+								6.2,
+								3.2,
+								6.2
+							],
+							"uv": [
+								0,
+								23
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

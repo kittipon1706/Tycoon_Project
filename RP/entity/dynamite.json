@@ -1,0 +1,33 @@
+	{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:dynamite",
+            "materials": {
+                "default": "entity_custom"
+            },
+            "textures": {
+                "default": "textures/entity/dynamite_tex"
+            },
+            "geometry": {
+                "default": "geometry.dynamite"
+            },
+            "render_controllers": [
+                "controller.render.dynamite"
+            ],
+            "animations": {
+                "state_controller": "controller.animation.dynamite.general",
+                "rotate": "animation.model.dynamite_rotateupdown"
+            },
+            "spawn_egg": {
+                "base_color": "#991010",
+                "overlay_color": "#111010"
+            },
+            "scripts": {
+                "animate": [
+                    "state_controller"
+                ]
+            }
+        }
+    }
+}

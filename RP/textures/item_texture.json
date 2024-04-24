@@ -1,0 +1,21 @@
+{
+	"resource_pack_name": "car",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"car_brochure": {
+			"textures": "textures/items/car_brochure"
+		},
+		"salesman_brochure": {
+			"textures": "textures/items/salesman_brochure"
+		},
+		"keys_car1": {
+			"textures": "textures/items/keys_car1"
+		},
+		"spray": {
+			"textures": "textures/items/spray"
+		},
+		"boxing_gloves": {
+			"textures": "textures/items/boxing_gloves"
+		}
+	}
+}

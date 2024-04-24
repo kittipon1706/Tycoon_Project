@@ -1,0 +1,38 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:vintage_car",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/car/vintage_car_tex"
+            },
+            "geometry": {
+                "default": "geometry.vintage_car"
+            },
+            "animations": {
+                "state_controller": "controller.animation.normal_car",
+                "move": "animation.model.moving",
+                "fix": "animation.model.fix",
+                "turn_left_hold": "animation.model.turnleft_hold",
+                "turn_left_start": "animation.model.turnleft_start",
+                "turn_right_hold": "animation.model.turnright_hold",
+                "turn_right_start": "animation.model.turnright_start"
+            },
+            "scripts": {
+                "animate": [
+                    "state_controller"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.normal_car1"
+            ],
+            "spawn_egg": {
+                "base_color": "#383838",
+                "overlay_color": "#FFFFFF"
+            }
+        }
+    }
+}

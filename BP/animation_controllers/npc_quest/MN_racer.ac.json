@@ -1,0 +1,16 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.mn_racer": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/execute if score dummy MN_clear matches 0 run dialogue change @s MN_racer_diag",
+                        "/execute if score dummy MN_clear matches 1 run dialogue change @s MN_racer_clear_diag"
+                    ]
+                }
+            }
+        }
+    }
+}

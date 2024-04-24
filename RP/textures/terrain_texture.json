@@ -1,0 +1,23 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "car",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"bridge_mystery_button": {
+			"textures": "textures/blocks/button/mystery_btn_active_tex"
+		},
+		"bridge_click_btn_active": {
+			"textures": "textures/blocks/button/click_btn_active_tex"
+		},
+		"bridge_test_1": {
+			"textures": "textures/blocks/test_1"
+		},
+		"bridge_test_2": {
+			"textures": "textures/blocks/test_2"
+		},
+		"bridge_shop_shelf": {
+			"textures": "textures/blocks/stage_1_shop_shelf_1_texture"
+		}
+	}
+}

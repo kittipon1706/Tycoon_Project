@@ -1,0 +1,1 @@
+event entity @e[x=40,y=-38,z=75,dx=60,dy=30,dz=51] bridge:despawn

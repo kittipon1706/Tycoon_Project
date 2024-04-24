@@ -1,0 +1,17 @@
+{
+	"format_version": "1.19.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "bridge:test_1"
+		},
+		"components": {
+			"minecraft:geometry": "geometry.test_1",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "bridge_test_1",
+					"render_method": "alpha_test"
+				}
+			}
+		}
+	}
+}
