@@ -1,0 +1,1 @@
+function stage1/stage1_quest_checker

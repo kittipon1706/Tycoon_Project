@@ -129,7 +129,7 @@
 					{
 						"condition": "q.block_state('kozs:clicked') == false",
 						"run_command": {
-							"command": "scoreboard players add dummy keyquest_st1_state 1"
+							"command": "scoreboard players add dummy st1_keyquest_state 1"
 						}
 					}
 				]

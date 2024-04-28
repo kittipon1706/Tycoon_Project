@@ -6,10 +6,10 @@
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "bridge:keyquest_st1"
+			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
-			"bridge:on_despawn": {
+			"bridge:set_despawn": {
 				"minecraft:instant_despawn": {}
 			}
 		},
@@ -65,18 +65,13 @@
 						"run_command": {
 							"command": "/give @p bridge:salesman_brochure"
 						}
-					},
-					{
-						"run_command": {
-							"command": "/function stage1/Key_Quest/on_start_keyquest_stage1"
-						}
 					}
 				]
 			},
-			"bridge:set_despawn": {
+			"bridge:despawn": {
 				"add": {
 					"component_groups": [
-						"bridge:on_despawn"
+						"bridge:set_despawn"
 					]
 				}
 			}

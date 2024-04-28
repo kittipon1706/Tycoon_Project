@@ -9,6 +9,12 @@
 			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
+			"bridge:transform_to_salesman": {
+				"minecraft:transformation": {
+					"into": "bridge:salesman_01",
+					"transformation_sound": "haggle"
+				}
+			},
 			"bridge:set_despawn": {
 				"minecraft:instant_despawn": {}
 			}
@@ -74,13 +80,10 @@
 			"bridge:set_salesman": {
 				"sequence": [
 					{
-						"run_command": {
-							"command": "/summon bridge:salesman_01 46 -36 163 270"
-						}
-					},
-					{
-						"run_command": {
-							"command": "/scoreboard players set dummy st1_main2_clear 1"
+						"add": {
+							"component_groups": [
+								"bridge:transform_to_salesman"
+							]
 						}
 					},
 					{

@@ -16,7 +16,7 @@
                 },
                 "waiting_queue": {
                     "on_entry": [
-                        // "/say waiting_queue"
+                        //"/say waiting_queue"
                     ],
                     "transitions": [
                         {

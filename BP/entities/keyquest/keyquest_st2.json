@@ -6,7 +6,7 @@
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "bridge:keyquest_st2"
+			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
 			"bridge:started_quest": {

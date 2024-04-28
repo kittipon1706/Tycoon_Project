@@ -62,12 +62,7 @@
 				"sequence": [
 					{
 						"run_command": {
-							"command": "/function stage1/create_dealership1"
-						}
-					},
-					{
-						"run_command": {
-							"command": "/scoreboard players set dummy st1_main1_clear 1"
+							"command": "/function stage0/on_clear_stage0"
 						}
 					},
 					{

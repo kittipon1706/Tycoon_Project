@@ -1,0 +1,24 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:shop_shelf",
+			"materials": {
+				"default": "villager"
+			},
+			"textures": {
+				"default": "textures/entity/shop_furniture/stage_1_shop_shelf_1_texture"
+			},
+			"geometry": {
+				"default": "geometry.shop_shelf"
+			},
+			"render_controllers": [
+				"controller.render.furniture"
+			],
+			"spawn_egg": {
+				"base_color": "#CF962B",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

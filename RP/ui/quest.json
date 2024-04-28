@@ -24,13 +24,7 @@
                     "use_child_anchors": true,
                     "controls": [
                         {
-                            "main_topic": {
-                                "type": "label",
-                                "text": "§lMAIN QUEST",
-                                "anchor_from": "top_right",
-                                "anchor_to": "top_right",
-                                "color": "green"
-                            }
+                            "main_topic@all_quest.main_topic": {}
                         },
                         {
                             "stage1_main_1@all_quest.stage1_main_1": {}
@@ -42,19 +36,76 @@
                             "stage1_main_3@all_quest.stage1_main_3": {}
                         },
                         {
-                            "key_topic": {
-                                "type": "label",
-                                "text": "§lKEY QUEST",
-                                "anchor_from": "top_right",
-                                "anchor_to": "top_right",
-                                "color": "yellow"
-                            }
+                            "key_topic@all_quest.key_topic": {}
                         },
                         {
-                            "stage1_key@all_quest.stage1_key": {}
+                            "stage1_key_1@all_quest.stage1_key_1": {}
+                        },
+                        {
+                            "expand_topic@all_quest.expand_topic": {}
+                        },
+                        {
+                            "stage1_expand_1@all_quest.stage1_expand_1": {}
                         }
                     ]
                 }
+            }
+        ]
+    },
+    "main_topic": {
+        "type": "label",
+        "text": "§lMAIN QUEST",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage1_main) = #text))",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "key_topic": {
+        "type": "label",
+        "text": "§lKEY QUEST",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "yellow",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage1_key) = #text))",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "expand_topic": {
+        "type": "label",
+        "text": "§lEXPANSION QUEST",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage1_expand) = #text))",
+                "target_property_name": "#visible"
             }
         ]
     },
@@ -73,7 +124,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_quest) = #text))",
+                "source_property_name": "(not((#text - @@stage1_main) = #text))",
                 "target_property_name": "#visible"
             },
             {
@@ -98,7 +149,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_quest) = #text))",
+                "source_property_name": "(not((#text - @@stage1_main) = #text))",
                 "target_property_name": "#visible"
             },
             {
@@ -123,7 +174,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_quest) = #text))",
+                "source_property_name": "(not((#text - @@stage1_main) = #text))",
                 "target_property_name": "#visible"
             },
             {
@@ -133,9 +184,9 @@
             }
         ]
     },
-    "stage1_key": {
+    "stage1_key_1": {
         "type": "label",
-        "text": "The Right Price",
+        "text": "- The Right Price",
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "color": "white",
@@ -148,12 +199,37 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_quest) = #text))",
+                "source_property_name": "(not((#text - @@stage1_key) = #text))",
                 "target_property_name": "#visible"
             },
             {
                 "binding_type": "view",
                 "source_property_name": "((#text - @@4) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage1_expand_1": {
+        "type": "label",
+        "text": "- Talk with Expo Organizer",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage1_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@5) = #text)",
                 "target_property_name": "#enabled"
             }
         ]

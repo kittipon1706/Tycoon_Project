@@ -12,8 +12,5 @@
 	},
 	"bridge:test_2": {
 		"sound": "stone"
-	},
-	"bridge:shop_shelf": {
-		"sound": "stone"
 	}
 }

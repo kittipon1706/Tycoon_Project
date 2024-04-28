@@ -278,7 +278,7 @@
 								{
 									"test": "is_family",
 									"subject": "other",
-									"value": "salesman"
+									"value": "salesman1"
 								}
 							]
 						},
@@ -293,7 +293,7 @@
 					"event_filters": {
 						"test": "is_family",
 						"subject": "other",
-						"value": "salesman"
+						"value": "salesman1"
 					},
 					"event": "bridge:trigger_waiting"
 				},
@@ -421,6 +421,10 @@
 			}
 		},
 		"components": {
+			"minecraft:behavior.look_at_target": {
+				"priority": 1,
+				"angle_of_view_vertical": 135
+			},
 			"minecraft:npc": {},
 			"minecraft:equipment": {
 				"table": "loot_tables/entities/customer/customer_1.json"

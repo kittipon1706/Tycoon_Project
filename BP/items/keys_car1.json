@@ -33,7 +33,7 @@
                     },
                     {
                         "run_command": {
-                            "command": "/event entity @e[family=!player_car] bridge:set_player_car"
+                            "command": "/event entity @e[family=car,c=1] bridge:set_player_car"
                         }
                     }
                 ]

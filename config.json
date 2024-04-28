@@ -11,7 +11,7 @@
 		"holidayCreatorFeatures": true,
 		"creationOfCustomBiomes": false,
 		"upcomingCreatorFeatures": false,
-		"enableGameTestFramework": false,
+		"enableGameTestFramework": true,
 		"experimentalMolangFeatures": false,
 		"educationEdition": false
 	},
