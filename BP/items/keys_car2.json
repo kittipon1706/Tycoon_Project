@@ -1,0 +1,43 @@
+	{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "bridge:keys_car2",
+            "category": "items"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.keys"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "texture": "normal_car2_key"
+            },
+            "minecraft:display_name": {
+                "value": "Keys Car2"
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "bridge:spawn_car"
+                }
+            }
+        },
+        "events": {
+            "bridge:spawn_car": {
+                "sequence": [
+                     {
+                        "run_command": {
+                            "command": "/summon bridge:normal_car2 ~ ~ ~"
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": "/event entity @e[family=car,c=1] bridge:set_player_car"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

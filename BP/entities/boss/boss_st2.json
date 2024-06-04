@@ -29,40 +29,31 @@
 					"entity_types": [
 						{
 							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "player"
-									},
-									{
-										"test": "has_tag",
-										"subject": "other",
-										"value": "Boss2"
-									}
-								]
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
 							},
-							"max_dist": 100
+							"max_dist": 300
 						}
 					],
-					"within_radius": 100
+					"within_radius": 300
 				},
 				"minecraft:behavior.move_towards_target": {
 					"priority": 2,
 					"speed_multiplier": 0.1,
-					"within_radius": 200
+					"within_radius": 300
 				},
 				"minecraft:attack": {
-					"damage": 10
+					"damage": 5
 				},
 				"minecraft:behavior.delayed_attack": {
-					"attack_duration": 0.3,
+					"attack_duration": 0.2,
 					"melee_fov": 90,
-					"cooldown_time": 1,
+					"cooldown_time": 0.5,
 					"priority": 1
 				},
 				"minecraft:movement": {
-					"value": 0.3
+					"value": 0.5
 				}
 			},
 			"bridge:set_despawn": {

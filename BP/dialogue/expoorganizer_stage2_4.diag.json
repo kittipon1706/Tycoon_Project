@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "expoorganizer_stage2_4_diag",
+                "npc_name": "Organizer",
+                "text": "You can buy 4 new cars from the manufacturer's warehouse.",
+                "buttons": [
+                    {
+                        "name": "Okay",
+                        "commands": [
+                            "/scoreboard players set dummy st2_main1_clear 1",
+                            "/event entity @s bridge:despawn"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

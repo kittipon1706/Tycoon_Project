@@ -14,9 +14,7 @@
                 },
                 "death": {
                     "on_entry": [
-                        "/say i am loss",
-                        "/scoreboard players set dummy Boss2_clear 1",
-                        "/function stage2/on_end_boss2"
+                        "/function stage2/Expansion_Quest/on_clear_expansionquest_stage2"
                     ]
                 }
             }

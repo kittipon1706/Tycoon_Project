@@ -1,0 +1,12 @@
+summon bridge:waypoint_bodyguard 50 2 -79 0 0 bridge:set_stage4_first_3
+summon bridge:waypoint_bodyguard 50 2 -84 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 50 2 -89 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 50 2 -94 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 50 2 -99 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 45 2 -99 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 40 2 -99 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 36 2 -99 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 36 2 -94 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 36 2 -89 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 36 2 -84 0 0 bridge:set_stage4_normal
+summon bridge:waypoint_bodyguard 36 2 -79 0 0 bridge:set_stage4_normal

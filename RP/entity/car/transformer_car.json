@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:transformer_car",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/car/transformer_tex"
+            },
+            "geometry": {
+                "default": "geometry.transformer_car"
+            },
+            "render_controllers": [
+                "controller.render.manufacturer"
+            ],
+            "spawn_egg": {
+                "base_color": "#048F2D",
+                "overlay_color": "#FFFFFF"
+            }
+        }
+    }
+}

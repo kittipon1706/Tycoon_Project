@@ -1,18 +1,11 @@
-summon bridge:waypoint_guide_stage2 112 -24 120
-summon bridge:waypoint_guide_stage2 116 -24 120
-summon bridge:waypoint_guide_stage2 119 -24 120
-summon bridge:waypoint_guide_stage2 122 -24 119
-summon bridge:waypoint_guide_stage2 126 -23 118
-summon bridge:waypoint_guide_stage2 132 -24 118
-summon bridge:waypoint_guide_stage2 138 -24 119
-summon bridge:waypoint_guide_stage2 142 -24 125
-summon bridge:waypoint_guide_stage2 147 -24 127
-summon bridge:waypoint_guide_stage2 152 -24 128
-summon bridge:waypoint_guide_stage2 159 -24 128
-summon bridge:waypoint_guide_stage2 164 -23 128
-summon bridge:waypoint_guide_stage2 169 -23 128
-summon bridge:waypoint_guide_stage2 174 -23 128
-summon bridge:waypoint_guide_stage2 191 -23 128
-summon bridge:waypoint_guide_stage2 195 -23 133
-summon bridge:waypoint_guide_stage2 200 -23 139
-summon bridge:waypoint_guide_stage2 200 -23 144
+summon bridge:waypoint_guide_stage2 103 -23 123
+summon bridge:waypoint_guide_stage2 97 -23 123
+summon bridge:waypoint_guide_stage2 90 -23 123
+summon bridge:waypoint_guide_stage2 83 -23 123
+summon bridge:waypoint_guide_stage2 76 -23 122
+summon bridge:waypoint_guide_stage2 71 -23 120
+summon bridge:waypoint_guide_stage2 66 -21 119
+summon bridge:waypoint_guide_stage2 60 -21 119
+summon bridge:waypoint_guide_stage2 55 -21 117
+event entity @e[family=waypoint_guid_stage2,x=55,y=-21,z=117,c=1] bridge:varaint_3
+event entity @e[family=waypoint_guid_stage2] bridge:set_invisible

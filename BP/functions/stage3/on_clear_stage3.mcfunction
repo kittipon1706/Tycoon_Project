@@ -1,0 +1,6 @@
+tickingarea remove boos_stage3_area
+tickingarea remove quest_stage3_area
+tickingarea remove showroom4
+tickingarea remove building4_1
+tickingarea remove building4_2
+function stage4/on_start_stage4

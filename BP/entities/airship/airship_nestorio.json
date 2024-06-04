@@ -1,0 +1,437 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:airship_nestorio",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "airship_nestorio": "controller.animation.airship_nestorio",
+                "reset_levitation": "controller.animation.reset_levitation"
+            },
+            "scripts": {
+                "animate": [
+                    "airship_nestorio",
+                    "reset_levitation"
+                ]
+            }
+        },
+        "component_groups": {
+            "bridge:is_enemies": {
+                "minecraft:type_family": {
+                    "family": [
+                        "airship_enemies",
+                        "airship",
+                        "mob"
+                    ]
+                },
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 5,
+                    "time_down_event": {
+                        "event": "bridge:add_leve",
+                        "target": "self"
+                    }
+                },
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.airship",
+                    "family_types": [
+                        "boss_stage4",
+                        "bodyguard"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.7,
+                            0.7,
+                            0.7
+                        ]
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:horse.jump_strength": {
+                    "value": 7
+                },
+                "minecraft:jump.dynamic": {},
+                "minecraft:movement.fly": {},
+                "minecraft:navigation.fly": {
+                    "can_float": true,
+                    "avoid_damage_blocks": true,
+                    "can_path_from_air": true,
+                    "avoid_water": true,
+                    "avoid_portals": true,
+                    "can_jump": true,
+                    "can_walk": true
+                },
+                "minecraft:can_fly": {},
+                "minecraft:flying_speed": {
+                    "value": 1
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 4,
+                    "speed_multiplier": 0.5,
+                    "xz_dist": 5,
+                    "y_dist": 1,
+                    "interval": 20
+                },
+                "minecraft:behavior.follow_target_captain": {
+                    "priority": 0,
+                    "speed_multiplier": 1,
+                    "within_radius": 300
+                },
+                "minecraft:is_illager_captain": {},
+                "minecraft:behavior.nearest_attackable_target": {
+                    "must_see": true,
+                    "priority": 3,
+                    "reselect_targets": true,
+                    "must_see_forget_duration": 2,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": ""
+                                    }
+                                ]
+                            },
+                            "max_dist": 200
+                        }
+                    ],
+                    "within_radius": 200
+                },
+                "minecraft:behavior.move_towards_target": {
+                    "priority": 2,
+                    "speed_multiplier": 1,
+                    "within_radius": 400
+                },
+                "minecraft:attack": {
+                    "damage": 1
+                },
+                "minecraft:movement": {
+                    "value": 3
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 1,
+                    "attack_interval_min": 1.0,
+                    "attack_interval_max": 3.0,
+                    "ranged_fov": 360,
+                    "speed_multiplier": 1,
+                    "attack_radius": 40.0
+                },
+                "minecraft:shooter": {
+                    "def": "bridge:paintball_throwable_enemies"
+                }
+            },
+            "bridge:set_despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:ridder_controlable": {
+                "minecraft:input_ground_controlled": {}
+            },
+            "bridge:moveable": {
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+            "bridge:not_moveable": {
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "bridge:rideable": {
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.airship",
+                    "family_types": [
+                        "player"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.7,
+                            0.7,
+                            0.7
+                        ]
+                    }
+                }
+            },
+            "bridge:on_stolen": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.8,
+                    "time_down_event": {
+                        "event": "bridge:despawn"
+                    }
+                }
+            },
+            "bridge:is_paint": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                },
+                "minecraft:interact": {
+                    "interactions": {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "value": "bridge:spray"
+                                    }
+                                ]
+                            },
+                            "event": "bridge:set_nestorio",
+                            "target": "self"
+                        }
+                    }
+                }
+            },
+            "bridge:is_nestorio": {
+                "minecraft:type_family": {
+                    "family": [
+                        "airship",
+                        "mob",
+                        "airship_nestorio"
+                    ]
+                },
+                "minecraft:health": {
+                    "value": 20
+                },
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.airship",
+                    "family_types": [
+                        "player"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.7,
+                            0.7,
+                            0.7
+                        ]
+                    }
+                },
+                "minecraft:input_ground_controlled": {},
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+            "bridge:is_empty": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                },
+                "minecraft:interact": {
+                    "interactions": {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "value": "bridge:paintgun"
+                                    }
+                                ]
+                            },
+                            "event": "bridge:set_paint",
+                            "target": "self"
+                        }
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:variant": {
+                "value": 0
+            },
+            "minecraft:knockback_resistance": {
+                "value": 100
+            },
+            "minecraft:horse.jump_strength": {
+                "value": {
+                    "range_min": 0.6,
+                    "range_max": 1.2
+                }
+            },
+            "minecraft:can_power_jump": {},
+            "minecraft:movement": {
+                "value": 0.5
+            },
+            "minecraft:collision_box": {
+                "width": 3,
+                "height": 2
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:type_family": {
+                "family": [
+                    "airship",
+                    "mob"
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:despawn": {
+                "add": {
+                    "component_groups": [
+                        "bridge:set_despawn"
+                    ]
+                }
+            },
+            "bridge:set_stolen": {
+                "add": {
+                    "component_groups": [
+                        "bridge:on_stolen"
+                    ]
+                }
+            },
+            "bridge:set_empty": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_empty"
+                    ]
+                }
+            },
+            "bridge:add_leve": {
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command": "/execute at @s as @e run effect @e[family=airship_enemies,c=1] levitation 0"
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": "/execute at @s as @e run effect @e[family=airship_enemies,c=1] levitation 4"
+                        }
+                    }
+                ]
+            },
+            "bridge:set_paint": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_paint"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:is_empty"
+                    ]
+                },
+                "run_command": {
+                    "command": "/scoreboard players set dummy st4_key1_clear 1"
+                }
+            },
+            "bridge:set_nestorio": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_nestorio"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:is_paint"
+                    ]
+                },
+                "run_command": {
+                    "command": "/scoreboard players set dummy st4_key2_clear 1"
+                }
+            },
+            "bridge:set_rideable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_can_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:moveable"
+                    ]
+                }
+            },
+            "bridge:set_can_not_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:not_moveable"
+                    ]
+                }
+            },
+            "bridge:set_ridder_control": {
+                "add": {
+                    "component_groups": [
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_enemies": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_enemies"
+                    ]
+                }
+            }
+        }
+    }
+}

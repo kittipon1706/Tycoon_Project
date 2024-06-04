@@ -107,10 +107,10 @@
 									}
 								]
 							},
-							"max_dist": 300
+							"max_dist": 100
 						}
 					],
-					"within_radius": 300
+					"within_radius": 100
 				},
 				"minecraft:type_family": {
 					"family": [
@@ -122,7 +122,7 @@
 				"minecraft:behavior.move_towards_target": {
 					"priority": 2,
 					"speed_multiplier": 0.1,
-					"within_radius": 300
+					"within_radius": 200
 				},
 				"minecraft:attack": {
 					"damage": 0
@@ -166,6 +166,68 @@
 										"test": "is_family",
 										"subject": "other",
 										"value": "waypoint_customer1_paid3_true"
+									}
+								]
+							},
+							"max_dist": 300
+						}
+					],
+					"within_radius": 300
+				},
+				"minecraft:type_family": {
+					"family": [
+						"customer1_paid",
+						"customer1",
+						"mob"
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 2,
+					"speed_multiplier": 0.1,
+					"within_radius": 300
+				},
+				"minecraft:attack": {
+					"damage": 0
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 1,
+					"attack_once": true,
+					"random_stop_interval": 100,
+					"on_attack": {
+						"event": "bridge:leave_store",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.3
+				}
+			},
+			"bridge:on_paid4": {
+				"minecraft:variant": {
+					"value": 3
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"must_see": false,
+					"priority": 3,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "onsell_car"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "my_onsell_car"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "waypoint_customer1_paid4_true"
 									}
 								]
 							},
@@ -365,6 +427,26 @@
 					}
 				}
 			},
+			"bridge:on_queue4": {
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:type_family": {
+					"family": [
+						"customer1_queue",
+						"customer1",
+						"mob",
+						"queue3"
+					]
+				},
+				"minecraft:timer": {
+					"random_interval": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:paid_money4"
+					}
+				}
+			},
 			"bridge:on_leaving": {
 				"minecraft:variant": {
 					"value": 4
@@ -519,7 +601,9 @@
 				},
 				"remove": {
 					"component_groups": [
-						"bridge:on_waiting"
+						"bridge:on_waiting",
+						"bridge:on_queue2",
+						"bridge:on_queue3"
 					]
 				}
 			},
@@ -531,7 +615,9 @@
 				},
 				"remove": {
 					"component_groups": [
-						"bridge:on_waiting"
+						"bridge:on_waiting",
+						"bridge:on_queue1",
+						"bridge:on_queue3"
 					]
 				}
 			},
@@ -543,7 +629,24 @@
 				},
 				"remove": {
 					"component_groups": [
-						"bridge:on_waiting"
+						"bridge:on_waiting",
+						"bridge:on_queue1",
+						"bridge:on_queue2"
+					]
+				}
+			},
+			"bridge:get_queue4": {
+				"add": {
+					"component_groups": [
+						"bridge:on_queue4"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"bridge:on_waiting",
+						"bridge:on_queue1",
+						"bridge:on_queue2",
+						"bridge:on_queue3"
 					]
 				}
 			},
@@ -580,6 +683,18 @@
 				"remove": {
 					"component_groups": [
 						"bridge:on_queue3"
+					]
+				}
+			},
+			"bridge:paid_money4": {
+				"add": {
+					"component_groups": [
+						"bridge:on_paid4"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"bridge:on_queue4"
 					]
 				}
 			},

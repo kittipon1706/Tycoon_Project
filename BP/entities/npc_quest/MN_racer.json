@@ -18,9 +18,14 @@
 		},
 		"component_groups": {
 			"bridge:is_npc": {
-				"minecraft:npc": {}
+				"minecraft:npc": {},
+				"minecraft:behavior.look_at_player": {
+					"priority": 8,
+					"look_distance": 8,
+					"probability": 0.02
+				}
 			},
-			"bridge:on_despawn": {
+			"bridge:set_despawn": {
 				"minecraft:instant_despawn": {}
 			}
 		},
@@ -60,17 +65,17 @@
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
-			"minecraft:behavior.look_at_player": {
-				"priority": 8,
-				"look_distance": 8,
-				"probability": 0.02
-			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
 				"is_pushable": false,
 				"is_pushable_by_piston": false
 			},
-			"minecraft:npc": {}
+			"minecraft:npc": {},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 8,
+				"probability": 0.02
+			}
 		},
 		"events": {
 			"bridge:set_npc": {
@@ -87,10 +92,10 @@
 					]
 				}
 			},
-			"bridge:set_despawn": {
+			"bridge:despawn": {
 				"add": {
 					"component_groups": [
-						"bridge:on_despawn"
+						"bridge:set_despawn"
 					]
 				}
 			}

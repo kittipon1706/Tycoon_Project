@@ -4,18 +4,24 @@
         "description": {
             "identifier": "bridge:normal_car3",
             "materials": {
-                "default": "spider"
+                "default": "entity_alphatest"
             },
             "textures": {
                 "default": "textures/entity/car/normal_car3_tex"
             },
             "geometry": {
-                "default": "geometry.normal_car1"
+                "default": "geometry.normal_car3"
             },
             "animations": {
-                "state_controller": "controller.animation.normal_car1",
-                "idle": "animation.normal_car1.idle",
-                "death": "animation.normal_car1.death"
+                "state_controller": "controller.animation.normal_car",
+                "move": "animation.model.moving",
+                "fix": "animation.model.fix",
+                "turn_left_hold": "animation.model.turnleft_hold",
+                "turn_left_start": "animation.model.turnleft_start",
+                "turn_right_hold": "animation.model.turnright_hold",
+                "turn_right_start": "animation.model.turnright_start",
+                "spawn": "animation.model.spawn",
+                "sold": "animation.model.buy"
             },
             "scripts": {
                 "animate": [

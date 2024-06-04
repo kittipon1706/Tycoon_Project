@@ -6,24 +6,10 @@
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "bridge:waypoint_midnight_racing_player",
-			"animations": {
-				"waypoint": "controller.animation.waypoint_midnight_racing_player"
-			},
-			"scripts": {
-				"animate": [
-					"waypoint"
-				]
-			}
+			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
 			"bridge:set_despawn": {
-				"minecraft:instant_despawn": {}
-			},
-			"bridge:remove_waypoint": {
-				"minecraft:variant": {
-					"value": 4
-				},
 				"minecraft:instant_despawn": {}
 			}
 		},
@@ -60,8 +46,8 @@
 				"max": 20
 			},
 			"minecraft:collision_box": {
-				"width": 1,
-				"height": 1
+				"width": 0.1,
+				"height": 1.9
 			},
 			"minecraft:pushable": {
 				"is_pushable": false,
@@ -81,14 +67,12 @@
 			"bridge:on_detect_car": {
 				"sequence": [
 					{
-						"filters": {
-							"test": "is_variant",
-							"operator": "=",
-							"value": 0
+						"run_command": {
+							"command": "/scoreboard players add dummy MN_objective_player 1"
 						},
 						"add": {
 							"component_groups": [
-								"bridge:remove_waypoint"
+								"bridge:set_despawn"
 							]
 						}
 					}

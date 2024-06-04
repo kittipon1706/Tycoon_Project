@@ -1,0 +1,109 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:alarm_clock_marker",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:transform_to": {
+				"minecraft:transformation": {
+					"into": "bridge:alarm_clock",
+					"transformation_sound": "haggle"
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"alarm_clock_marker",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:interact": {
+				"interactions": {
+					"use_item": true,
+					"particle_on_start": {
+						"particle_type": "minecraft:white_smoke_particle",
+						"particle_y_offset": 0.25,
+						"particle_offset_towards_interactor": true
+					},
+					"on_interact": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "bridge:salesman1_contract"
+								}
+							]
+						},
+						"event": "bridge:set_transform",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:set_transform": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"bridge:transform_to"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"bridge:set_despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

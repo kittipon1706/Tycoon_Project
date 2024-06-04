@@ -12,5 +12,17 @@
 	},
 	"bridge:test_2": {
 		"sound": "stone"
+	},
+	"bridge:control_panel_1": {
+		"sound": "stone"
+	},
+	"bridge:control_panel_2": {
+		"sound": "stone"
+	},
+	"bridge:control_panel_3": {
+		"sound": "stone"
+	},
+	"bridge:control_panel_4": {
+		"sound": "stone"
 	}
 }

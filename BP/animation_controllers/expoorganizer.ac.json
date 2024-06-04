@@ -5,8 +5,50 @@
             "initial_state": "default",
             "states": {
                 "default": {
+                    "transitions": [
+                        {
+                            "stage1": "query.variant == 1"
+                        },
+                        {
+                            "stage2_1": "query.variant == 2"
+                        },
+                        {
+                            "stage2_2": "query.variant == 3"
+                        }
+                    ]
+                },
+                "stage1": {
                     "on_entry": [
-                        "/dialogue change @s expoorganizer_diag"
+                        "/say 1",
+                        "/dialogue change @s expoorganizer_stage1_diag"
+                    ]
+                },
+                "stage2_1": {
+                    "on_entry": [
+                        "/say 2",
+                        "/dialogue change @s expoorganizer_stage2_1_diag"
+                    ],
+                    "transitions": [
+                        {
+                            "stage2_2": "query.variant == 3"
+                        }
+                    ]
+                },
+                "stage2_2": {
+                    "on_entry": [
+                        "/say 3",
+                        "/dialogue change @s expoorganizer_stage2_2_diag"
+                    ],
+                    "transitions": [
+                        {
+                            "stage2_3": "query.variant == 4"
+                        }
+                    ]
+                },
+                "stage2_3": {
+                    "on_entry": [
+                        "/say 4",
+                        "/dialogue change @s expoorganizer_stage2_3_diag"
                     ]
                 }
             }

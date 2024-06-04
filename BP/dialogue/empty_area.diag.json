@@ -1,0 +1,24 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "empty_area_diag",
+                "npc_name": "Empty Area",
+                "text": "Buy for 5000",
+                "buttons": [
+                    {
+                        "name": "Yes",
+                        "commands": [
+                            "/execute if score dummy money matches 5000.. run function stage0/on_clear_stage0",
+                            "/execute if score dummy money matches 5000.. run scoreboard players remove dummy money 5000"
+                        ]
+                    },
+                    {
+                        "name": "No"
+                    }
+                ]
+            }
+        ]
+    }
+}

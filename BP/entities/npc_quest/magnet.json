@@ -1,0 +1,96 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:magnet",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:villager"
+		},
+		"component_groups": {
+			"bridge:timer_set_diagoue": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:diagoue",
+						"target": "self"
+					}
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:npc": {},
+			"minecraft:type_family": {
+				"family": [
+					"magnet",
+					"mob"
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 1
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 1,
+				"probability": 1
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:diagoue": {
+				"run_command": {
+					"command": "/dialogue change @s magnet_stage2_diag_2_1"
+				}
+			}
+		}
+	}
+}

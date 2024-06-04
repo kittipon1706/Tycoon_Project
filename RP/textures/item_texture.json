@@ -8,14 +8,35 @@
 		"salesman_brochure": {
 			"textures": "textures/items/salesman_brochure"
 		},
-		"keys_car1": {
-			"textures": "textures/items/keys_car1"
+		"normal_car1_key": {
+			"textures": "textures/items/keys/normal_car1_key"
+		},
+		"normal_car2_key": {
+			"textures": "textures/items/keys/normal_car2_key"
+		},
+		"normal_car3_key": {
+			"textures": "textures/items/keys/normal_car3_key"
+		},
+		"mid_car4_key": {
+			"textures": "textures/items/keys/mid_car4_key"
+		},
+		"mid_car5_key": {
+			"textures": "textures/items/keys/mid_car5_key"
+		},
+		"mid_car6_key": {
+			"textures": "textures/items/keys/mid_car6_key"
+		},
+		"mid_car7_key": {
+			"textures": "textures/items/keys/mid_car7_key"
 		},
 		"spray": {
 			"textures": "textures/items/spray"
 		},
 		"boxing_gloves": {
 			"textures": "textures/items/boxing_gloves"
+		},
+		"stage2_helmet": {
+			"textures": "textures/models/armor/custom_helmet"
 		}
 	}
 }

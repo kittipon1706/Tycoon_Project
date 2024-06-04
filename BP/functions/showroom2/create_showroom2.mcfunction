@@ -1,8 +1,8 @@
 scoreboard players set dummy showroom2_customer_spawn_timer 0
-scoreboard players set dummy other_car2_generate_timer1 0
-scoreboard players set dummy other_car2_generate_timer2 0
-scoreboard players set dummy other_car2_generate_timer3 0
-scoreboard players set dummy other_car2_generate_timer4 0
+scoreboard players set dummy showroom2_car_generate_timer1 0
+scoreboard players set dummy showroom2_car_generate_timer2 0
+scoreboard players set dummy showroom2_car_generate_timer3 0
+scoreboard players set dummy showroom2_car_generate_timer4 0
 function showroom2/remove_showroom2
 structure load showroom2_1 14 -24 70
 structure load showroom2_2 65 -24 70
@@ -58,6 +58,6 @@ summon bridge:waypoint_customer1_leave 90 -23 112
 summon bridge:waypoint_customer1_leave 97 -23 112
 summon bridge:waypoint_customer1_leave 104 -23 112
 summon bridge:waypoint_customer1_leave 101 -23 102
-event entity @e[family=waypoint_customer1] bridge:set_invisible
+event entity @e[family=waypoint_customer1] bridge:set_visible
 # saleman
 summon bridge:salesman_01 52 -22 98

@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.player.throwables": { // The ID we will reference in the player's entity description
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            // Current "q.is_item_name_any" takes 3 arguments, first is slot name, second is slot id, third is the item we want to check for
+                            "throw_item": "q.is_item_name_any('slot.weapon.mainhand', 0, 'bridge:paintball') && q.is_using_item"
+                            // "q.is_using_item" returns 'true' or 'false', in our case if player uses item it is going to return 'true'
+                        }
+                    ],
+                    "on_entry": [
+                        // Resets the player entity in order to be able to throw another item
+                        "/event entity @s bridge:reset_player"
+                    ]
+                },
+                "throw_item": {
+                    "transitions": [
+                        {
+                            "default": "1.0"
+                        }
+                    ],
+                    "on_entry": [
+                        // Call the event in the player entity responsible of throwing the item
+                        "/event entity @s bridge:throw_item",
+                        // Remove the item from player's inventory
+                        "/clear @s bridge:paintball_throwable -1 1"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bridge:paintball",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": {
+				"texture": "salesman_brochure"
+			},
+			"minecraft:display_name": {
+				"value": "Paint Ball"
+			},
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "bridge:throw"
+				}
+			}
+		},
+		"events": {
+			"bridge:throw": {
+				"shoot": {
+					"projectile": "bridge:paintball_throwable",
+					"launch_power": 2,
+					"angle_offset": 1
+				},
+				"swing": {},
+				"decrement_stack": {},
+				"run_command": {
+					"command": [
+						"/playsound fire.ignite",
+						"/playsound mob.witch.throw"
+					]
+				}
+			}
+		}
+	}
+}

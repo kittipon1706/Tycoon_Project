@@ -1,0 +1,140 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:billboard_paintball",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"bridge:is_quest": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": true,
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								"event": "bridge:set_painted",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"bridge:is_clean": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:type_family": {
+					"family": [
+						"billboard_paintball_clean",
+						"billboard_paintball",
+						"mob"
+					]
+				}
+			},
+			"bridge:is_painted": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"billboard_paintball_painted",
+						"billboard_paintball",
+						"mob"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"billboard_paintball",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 8,
+				"height": 4
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:is_quest",
+						"bridge:is_clean"
+					]
+				}
+			},
+			"bridge:set_quest": {
+				"add": {
+					"component_groups": [
+						"bridge:is_quest"
+					]
+				}
+			},
+			"bridge:set_painted": {
+				"add": {
+					"component_groups": [
+						"bridge:is_painted"
+					]
+				}
+			},
+			"bridge:set_clean": {
+				"add": {
+					"component_groups": [
+						"bridge:is_clean"
+					]
+				}
+			}
+		}
+	}
+}

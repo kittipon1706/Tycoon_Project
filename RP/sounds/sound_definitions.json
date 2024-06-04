@@ -1,6 +1,45 @@
 {
 	"format_version": "1.14.0",
 	"sound_definitions": {
+		"mob.car.move": {
+			"category": "neutral",
+			"sounds": [
+				{
+					"name": "sounds/car/move_car",
+					"volume": 0.3
+				}
+			],
+			"max_distance": 8
+		},
+		"mob.car.start": {
+			"category": "neutral",
+			"sounds": [
+				{
+					"name": "sounds/car/start_car",
+					"volume": 0.3
+				}
+			],
+			"max_distance": 8
+		},
+		"mob.car.turnoff": {
+			"category": "neutral",
+			"sounds": [
+				{
+					"name": "sounds/car/turnoff_car",
+					"volume": 0.3
+				}
+			],
+			"max_distance": 8
+		},
+		"mob.phototype.bgm": {
+			"category": "music",
+			"sounds": [
+				{
+					"name": "sounds/phototype_bgm",
+					"volume": 0.5
+				}
+			]
+		},
 		"mob.salesman_01.death": {
 			"category": "neutral",
 			"sounds": [

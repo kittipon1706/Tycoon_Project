@@ -9,6 +9,17 @@
 			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
+			"bridge:timer_set_diagoue": {
+				"minecraft:npc": {},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:set_diagoue",
+						"target": "self"
+					}
+				}
+			},
 			"bridge:started_quest": {
 				"minecraft:variant": {
 					"value": 1
@@ -41,54 +52,34 @@
 				"max": 20
 			},
 			"minecraft:collision_box": {
-				"width": 1,
-				"height": 2
+				"width": 0.6,
+				"height": 1.9
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
 				"is_pushable": false,
 				"is_pushable_by_piston": false
 			},
-			"minecraft:conditional_bandwidth_optimization": {},
-			"minecraft:interact": {
-				"interactions": {
-					"on_interact": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_equipment",
-									"domain": "hand",
-									"subject": "other",
-									"value": "bridge:boxing_gloves"
-								}
-							]
-						},
-						"event": "bridge:set_start_quest",
-						"target": "self"
-					}
-				}
-			}
+			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
-			"bridge:set_start_quest": {
-				"sequence": [
-					{
-						"run_command": {
-							"command": "/function stage2/on_start_boss2"
-						}
-					}
-				]
-			},
 			"bridge:despawn": {
 				"add": {
 					"component_groups": [
 						"bridge:set_despawn"
 					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"bridge:set_diagoue": {
+				"run_command": {
+					"command": "/dialogue change @s boss_quest_stage2_diag"
 				}
 			}
 		}

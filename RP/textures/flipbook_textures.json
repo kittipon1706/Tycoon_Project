@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "atlas_tile": "bridge_control_panel_1_ani",
+        "flipbook_texture": "textures/blocks/control_panel/stage_3_ani_control_panel_1_texture",
+        "ticks_per_frame": 10
+    },
+    {
+        "atlas_tile": "bridge_control_panel_2_ani",
+        "flipbook_texture": "textures/blocks/control_panel/stage_3_ani_control_panel_2_texture",
+        "ticks_per_frame": 10
+    },
+    {
+        "atlas_tile": "bridge_control_panel_3_ani",
+        "flipbook_texture": "textures/blocks/control_panel/stage_3_ani_control_panel_3_texture",
+        "ticks_per_frame": 10
+    },
+    {
+        "atlas_tile": "bridge_control_panel_4_ani",
+        "flipbook_texture": "textures/blocks/control_panel/stage_3_ani_control_panel_4_texture",
+        "ticks_per_frame": 10
+    }
+]

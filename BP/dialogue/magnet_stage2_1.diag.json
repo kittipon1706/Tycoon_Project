@@ -1,0 +1,26 @@
+	{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "magnet_stage2_diag_2_1",
+                "npc_name": "Magnet",
+                "text": "come fight with me!",
+                "buttons": [
+                    {
+                        "name": "I'm ready",
+                        "commands": [
+                            "/teleport @s 189 -21 -15 70",
+                            "/teleport @a 163 -21 -10 270",
+                            "/summon bridge:bossquest_st2 189 -21 -10",
+                            "/dialogue change @s magnet_stage2_diag_2_2"
+                        ]
+                    },
+                    {
+                        "name": "No"
+                    }
+                ]
+            }
+        ]
+    }
+}

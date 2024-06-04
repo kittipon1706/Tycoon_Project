@@ -45,18 +45,21 @@
     "scoreboard_sidebar": {
         "type": "panel",
         "size": [
-            "20%",
-            "20%"
+            "100%",
+            "100%"
         ],
         "offset": [
             5,
             -5
         ],
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
+        "anchor_from": "center",
+        "anchor_to": "center",
         "controls": [
             {
                 "moneyimage@money.money_image": {}
+            },
+            {
+                "test_scoreboard_sidebar@phototype_test.test_scoreboard_sidebar": {}
             }
         ]
     },
@@ -392,5 +395,18 @@
         ],
         "$sb_collection_name": "scoreboard_scored_list_collection",
         "$has_score": true
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "test_scoreboard_sidebar@phototype_test.test_scoreboard_sidebar": {}
+                    }
+                ]
+            }
+        ]
     }
 }

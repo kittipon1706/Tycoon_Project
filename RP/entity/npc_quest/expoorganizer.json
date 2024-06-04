@@ -7,10 +7,10 @@
 				"default": "villager"
 			},
 			"textures": {
-				"default": "textures/entity/manufacturer"
+				"default": "textures/entity/npc_quest/expoorganizer_tex"
 			},
 			"geometry": {
-				"default": "geometry.manufacturer"
+				"default": "geometry.expoorganizer"
 			},
 			"scripts": {
 				"scale": 1

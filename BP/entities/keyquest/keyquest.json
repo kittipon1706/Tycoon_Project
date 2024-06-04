@@ -1,0 +1,195 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:keyquest",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:is_stage1": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage1",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"keyquest_st1"
+					]
+				}
+			},
+			"bridge:is_stage2": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage2",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"keyquest_st2"
+					]
+				}
+			},
+			"bridge:is_stage3": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage3",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"keyquest_st3"
+					]
+				}
+			},
+			"bridge:is_stage4": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage4",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"keyquest_st4"
+					]
+				}
+			},
+			"bridge:is_stage5": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage5",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"keyquest_st5"
+					]
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:npc": {},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"keyquest_st3"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"bridge:set_diagoue_stage1": {
+				"run_command": {
+					"command": "/dialogue change @s key_quest_stage1_diag"
+				}
+			},
+			"bridge:set_diagoue_stage2": {
+				"run_command": {
+					"command": "/dialogue change @s key_quest_stage2_diag"
+				}
+			},
+			"bridge:set_diagoue_stage3": {
+				"run_command": {
+					"command": "/dialogue change @s key_quest_stage3_diag"
+				}
+			},
+			"bridge:set_diagoue_stage4": {
+				"run_command": {
+					"command": "/dialogue change @s key_quest_stage4_diag"
+				}
+			},
+			"bridge:set_diagoue_stage5": {
+				"run_command": {
+					"command": "/dialogue change @s key_quest_stage5_diag"
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:set_stage1": {
+				"add": {
+					"component_groups": [
+						"bridge:is_stage1"
+					]
+				}
+			},
+			"bridge:set_stage2": {
+				"add": {
+					"component_groups": [
+						"bridge:is_stage2"
+					]
+				}
+			},
+			"bridge:set_stage3": {
+				"add": {
+					"component_groups": [
+						"bridge:is_stage3"
+					]
+				}
+			},
+			"bridge:set_stage4": {
+				"add": {
+					"component_groups": [
+						"bridge:is_stage4"
+					]
+				}
+			},
+			"bridge:set_stage5": {
+				"add": {
+					"component_groups": [
+						"bridge:is_stage5"
+					]
+				}
+			}
+		}
+	}
+}

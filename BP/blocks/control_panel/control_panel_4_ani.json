@@ -1,0 +1,18 @@
+{
+	"format_version": "1.20.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "bridge:control_panel_4_ani"
+		},
+		"components": {
+			"minecraft:geometry": "geometry.control_panel_4",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "bridge_control_panel_4_ani",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:collision_box": true
+		}
+	}
+}

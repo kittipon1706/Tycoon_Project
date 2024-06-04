@@ -63,7 +63,7 @@
 				"sequence": [
 					{
 						"run_command": {
-							"command": "/give @p bridge:salesman_brochure"
+							"command": "/give @p bridge:keyquest_stage2_helmet"
 						}
 					}
 				]

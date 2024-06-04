@@ -1,0 +1,75 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:dynamite_marker",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:transform_to_placed": {
+				"minecraft:transformation": {
+					"into": "bridge:dynamite",
+					"begin_transform_sound": "death",
+					"transformation_sound": "ambient"
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"dynamite_marker"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:interact": {
+				"interactions": {
+					"on_interact": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"event": "bridge:transform",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"events": {
+			"bridge:transform": {
+				"add": {
+					"component_groups": [
+						"bridge:transform_to_placed"
+					]
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -10,8 +10,8 @@
                     {
                         "name": "Yes",
                         "commands": [
-                            "/function stage1/The_Midnight_Racer/on_start_MN",
-                            "/event entity @e[family=MN,c=1] bridge:remove_npc"
+                            "/tag @initiator add MN",
+                            "/function The_Midnight_Racer/on_start_MN"
                         ]
                     },
                     {

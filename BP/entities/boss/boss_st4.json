@@ -1,0 +1,148 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:boss_stage4",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"boss_st4": "controller.animation.boss_st4"
+			},
+			"scripts": {
+				"animate": [
+					"boss_st4"
+				]
+			}
+		},
+		"component_groups": {
+			"bridge:on_death": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"bridge:attack_player": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"must_see": true,
+					"priority": 3,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 300
+						}
+					],
+					"within_radius": 300
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 2,
+					"speed_multiplier": 0.1,
+					"within_radius": 300
+				},
+				"minecraft:attack": {
+					"damage": 5
+				},
+				"minecraft:behavior.delayed_attack": {
+					"attack_duration": 0.75,
+					"melee_fov": 90,
+					"cooldown_time": 0.5,
+					"speed_multiplier": 0.5,
+					"priority": 1
+				},
+				"minecraft:movement": {
+					"value": 0.5
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"bridge:is_wait": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:boss": {
+				"hud_range": 55,
+				"name": "Boss 4",
+				"should_darken_sky": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"boss_stage4",
+					"mob"
+				]
+			},
+			"minecraft:inventory": {
+				"inventory_size": 8,
+				"private": true
+			},
+			"minecraft:equip_item": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.5
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"blocks_to_avoid": [
+					"grass_block"
+				],
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"bridge:set_wait": {
+				"add": {
+					"component_groups": [
+						"bridge:is_wait"
+					]
+				}
+			},
+			"bridge:set_attack_player": {
+				"add": {
+					"component_groups": [
+						"bridge:attack_player"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"bridge:is_wait"
+					]
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			}
+		}
+	}
+}

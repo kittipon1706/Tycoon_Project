@@ -90,7 +90,7 @@
 			"minecraft:collision_box": false,
 			"minecraft:geometry": "geometry.button",
 			"minecraft:on_interact": {
-				"condition": "query.equipped_item_any_tag('slot.weapon.mainhand','pass_id')",
+				"condition": "query.equipped_item_any_tag('slot.armor.head','stage2_pass_id')",
 				"event": "set_interact",
 				"target": "self"
 			},

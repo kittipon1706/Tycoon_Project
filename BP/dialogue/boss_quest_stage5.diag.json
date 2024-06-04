@@ -1,0 +1,24 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "boss_quest_stage5_diag",
+                "npc_name": "Showdown",
+                "text": "You have the confront an angry dealership owner and his security.",
+                "buttons": [
+                    {
+                        "name": "I'm ready",
+                        "commands": [
+                            "/execute if score dummy money matches 50000.. run function stage5/Expansion_Quest/on_clear_expansionquest_stage5",
+                            "/execute if score dummy money matches 50000.. run scoreboard players remove dummy money 50000"
+                        ]
+                    },
+                    {
+                        "name": "No"
+                    }
+                ]
+            }
+        ]
+    }
+}

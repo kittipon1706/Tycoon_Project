@@ -5,13 +5,20 @@
             {
                 "scene_tag": "manufacturer_diag",
                 "npc_name": "Manufacturer",
-                "text": "Welcome to manufacturer's warehouse",
+                "text": "Welcome to manufacturer's warehouse, we have quality personnel ready to serve you.\n\n\n§cSalesman: §01000\n§cManager: §03000",
                 "buttons": [
                     {
-                        "name": "Car brochure",
+                        "name": "Hiring Salesman",
                         "commands": [
-                            "/give @initiator bridge:car_brochure",
-                            "/say you got it!!"
+                            "/execute if score dummy money matches 1000.. run give @p bridge:salesman1_contract 1",
+                            "/execute if score dummy money matches 1000.. run scoreboard players remove dummy money 1000"
+                        ]
+                    },
+                    {
+                        "name": "Hiring Manager",
+                        "commands": [
+                            "/execute if score dummy money matches 3000.. run give @p bridge:manager1_contract 1",
+                            "/execute if score dummy money matches 3000.. run scoreboard players remove dummy money 3000"
                         ]
                     }
                 ]

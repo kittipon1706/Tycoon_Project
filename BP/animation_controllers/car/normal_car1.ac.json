@@ -1,0 +1,38 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.normal_car1": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "sold": "query.variant == 1"
+                        },
+                        {
+                            "cancel_test": "!query.has_rider && query.variant == 4"
+                        }
+                    ]
+                },
+                "sold": {
+                    "on_entry": [
+                        "/replaceitem entity @e[family=customer1_paid,c=1] slot.weapon.mainhand 1 bridge:keys_car1",
+                        "/execute if entity @s[family=my_onsell_car] run scoreboard players add dummy money 100"
+                    ]
+                },
+                "cancel_test": {
+                    "on_entry": [
+                        "/execute if entity @e[family=test_car] run function The_Prototype_Test/on_cancel_test"
+                        // "/execute if entity @e[family=MN_player_car] run function The_Midnight_Racer/on_clear_MN"
+                    ],
+                    "transitions": [
+                        {
+                            "idle": "query.has_rider"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

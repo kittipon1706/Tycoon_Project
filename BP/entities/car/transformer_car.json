@@ -1,0 +1,231 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:transformer_car",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "car": "controller.animation.boss_st3"
+            },
+            "scripts": {
+                "animate": [
+                    "car"
+                ]
+            }
+        },
+        "component_groups": {
+            "bridge:tamed": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 1.5,
+                    "time_down_event": {
+                        "event": "bridge:set_rideable"
+                    }
+                }
+            },
+            "bridge:set_despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:ridder_controlable": {
+                "minecraft:input_ground_controlled": {}
+            },
+            "bridge:moveable": {
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+            "bridge:not_moveable": {
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "bridge:car_path_finding": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 0,
+                    "reselect_targets": true,
+                    "target_search_height": 1000,
+                    "within_radius": 1000,
+                    "must_see": false,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "waypoint_midnight_racing_true"
+                            },
+                            "max_dist": 1000
+                        }
+                    ]
+                },
+                "minecraft:behavior.move_towards_target": {
+                    "priority": 2,
+                    "speed_multiplier": 0.2,
+                    "within_radius": 2000
+                },
+                "minecraft:attack": {
+                    "damage": 0
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 0,
+                    "require_complete_path": true,
+                    "track_target": true
+                },
+                "minecraft:follow_range": {
+                    "value": 1000,
+                    "max": 1000
+                }
+            },
+            "bridge:rideable": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:rideable": {
+                    "seat_count": 1,
+                    "interact_text": "action.interact.ride.car",
+                    "family_types": [
+                        "MN",
+                        "player"
+                    ],
+                    "seats": {
+                        "position": [
+                            0.8,
+                            0.8,
+                            0.8
+                        ]
+                    }
+                }
+            },
+            "bridge:is_player_car": {
+                "minecraft:type_family": {
+                    "family": [
+                        "car",
+                        "player_car",
+                        "normal_car3",
+                        "mob"
+                    ]
+                }
+            },
+            "bridge:on_despawn": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:boss": {
+                "hud_range": 55,
+                "name": "Transformer Car",
+                "should_darken_sky": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 100
+            },
+            "minecraft:movement": {
+                "value": 0.5
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:collision_box": {
+                "width": 4.8,
+                "height": 1.9
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "car",
+                    "transformer_car",
+                    "mob"
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:set_player_car": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_player_car"
+                    ]
+                }
+            },
+            "bridge:despawn": {
+                "add": {
+                    "component_groups": [
+                        "bridge:set_despawn"
+                    ]
+                }
+            },
+            "bridge:set_tamed": {
+                "add": {
+                    "component_groups": [
+                        "bridge:tamed"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_rideable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:tamed"
+                    ]
+                }
+            },
+            "bridge:set_path": {
+                "add": {
+                    "component_groups": [
+                        "bridge:car_path_finding"
+                    ]
+                }
+            },
+            "bridge:set_can_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:moveable"
+                    ]
+                }
+            },
+            "bridge:set_can_not_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:not_moveable"
+                    ]
+                }
+            }
+        }
+    }
+}

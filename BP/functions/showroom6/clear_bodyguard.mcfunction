@@ -1,0 +1,1 @@
+event entity @e[family=bodyguard,x=29,y=-23,z=-172,dx=69,dy=43,dz=57] bridge:despawn

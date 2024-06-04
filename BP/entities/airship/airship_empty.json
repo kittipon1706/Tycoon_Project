@@ -1,0 +1,108 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:airship_empty",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "bridge:set_despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:on_stolen": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.8,
+                    "time_down_event": {
+                        "event": "bridge:despawn"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:knockback_resistance": {
+                "value": 100
+            },
+            "minecraft:collision_box": {
+                "width": 3,
+                "height": 2
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:type_family": {
+                "family": [
+                    "airship_empty",
+                    "airship",
+                    "mob"
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:interact": {
+                "interactions": {
+                    "on_interact": {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        "event": "bridge:set_stolen",
+                        "target": "self"
+                    }
+                }
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:despawn": {
+                "add": {
+                    "component_groups": [
+                        "bridge:set_despawn"
+                    ]
+                }
+            },
+            "bridge:set_stolen": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "bridge:on_stolen"
+                            ]
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": "/scoreboard players set dummy st4_main1_clear 1"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

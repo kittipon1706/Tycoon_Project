@@ -6,9 +6,43 @@
 			"is_spawnable": false,
 			"is_summonable": false,
 			"is_experimental": false,
-			"animations": {}
+			"animations": {
+				"flying_entity": "controller.animation.flying_entity",
+				"throwables_controller": "controller.animation.player.throwables"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"flying_entity": "q.is_riding"
+					},
+					{
+						"throwables_controller": "query.is_alive"
+					}
+				]
+			}
 		},
 		"component_groups": {
+			"bridge:throw_entity": { // Contains a component that will spawn the entity
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 0,
+						"max_wait_time": 0,
+						"single_use": true,
+						"spawn_entity": "bridge:paintball_throwable",
+						"num_to_spawn": 1
+					}
+				}
+			},
+			"bridge:can_move": {
+				"minecraft:movement": {
+					"value": 0.1
+				}
+			},
+			"bridge:can_not_move": {
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
 			"minecraft:add_bad_omen": {
 				"minecraft:spell_effects": {
 					"add_effects": [
@@ -167,9 +201,28 @@
 					},
 					"event": "minecraft:trigger_raid"
 				}
+			},
+			"minecraft:behavior.delayed_attack": {
+				"attack_duration": 1,
+				"priority": 1,
+				"cooldown_time": 1
 			}
 		},
 		"events": {
+			"bridge:reset_player": {
+				"remove": {
+					"component_groups": [
+						"bridge:throw_entity"
+					]
+				}
+			},
+			"bridge:throw_item": {
+				"add": {
+					"component_groups": [
+						"bridge:throw_entity"
+					]
+				}
+			},
 			"minecraft:gain_bad_omen": {
 				"add": {
 					"component_groups": [
@@ -200,6 +253,20 @@
 				"remove": {
 					"component_groups": [
 						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"bridge:set_stop_moveing": {
+				"add": {
+					"component_groups": [
+						"bridge:can_not_move"
+					]
+				}
+			},
+			"bridge:set_moving": {
+				"add": {
+					"component_groups": [
+						"bridge:can_move"
 					]
 				}
 			}

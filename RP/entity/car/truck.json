@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:normal_car1",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/car/normal_car1_tex"
+            },
+            "geometry": {
+                "default": "geometry.normal_car1"
+            },
+            "animations": {
+                "state_controller": "controller.animation.truck",
+                "move": "animation.model.moving",
+                "fix": "animation.model.fix",
+                "turn_left_hold": "animation.model.turnleft_hold",
+                "turn_left_start": "animation.model.turnleft_start",
+                "turn_right_hold": "animation.model.turnright_hold",
+                "turn_right_start": "animation.model.turnright_start",
+                "spawn": "animation.model.spawn",
+                "sold": "animation.model.buy"
+            },
+            "scripts": {
+                "animate": [
+                    "state_controller"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.normal_car1"
+            ],
+            "sound_effects": {
+                "start_sound": "mob.car.start",
+                "turn_off_sound": "mob.car.turnoff",
+                "move_sound": "mob.car.move"
+            },
+            "spawn_egg": {
+                "base_color": "#D10000",
+                "overlay_color": "#FFFFFF"
+            }
+        }
+    }
+}

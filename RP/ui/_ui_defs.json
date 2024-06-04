@@ -1,6 +1,7 @@
 {
     "ui_defs": [
         "ui/money.json",
-        "ui/quest.json"
+        "ui/quest.json",
+        "ui/phototype_test.json"
     ]
 }

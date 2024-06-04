@@ -1,0 +1,27 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.airship": {
+            "arrays": {
+                "textures": {
+                    "Array.type": [
+                        "Texture.type_1",
+                        "Texture.type_2",
+                        "Texture.type_3",
+                        "Texture.type_4",
+                        "Texture.type_5"
+                    ]
+                }
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Array.type[q.variant]"
+            ]
+        }
+    }
+}

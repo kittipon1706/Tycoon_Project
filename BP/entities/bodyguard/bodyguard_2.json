@@ -8,6 +8,9 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			},
 			"bridge:attack_player": {
 				"minecraft:target_nearby_sensor": {
 					"outside_range": 10,
@@ -66,6 +69,7 @@
 			"minecraft:type_family": {
 				"family": [
 					"bodyguard",
+					"bodyguard3_2",
 					"mob"
 				]
 			},
@@ -114,6 +118,13 @@
 			}
 		},
 		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
 			"bridge:out_target": {
 				"run_command": {
 					"command": "/teleport @s 101 -38 35"

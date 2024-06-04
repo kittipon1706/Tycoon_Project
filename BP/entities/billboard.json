@@ -9,44 +9,63 @@
 			"runtime_identifier": "minecraft:armor_stand"
 		},
 		"component_groups": {
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"bridge:is_quest": {
+				"minecraft:interact": {
+					"interactions": {
+						"use_item": true,
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "bridge:spray"
+									}
+								]
+							},
+							"event": "bridge:set_altered",
+							"target": "self"
+						}
+					}
+				}
+			},
 			"bridge:is_old": {
 				"minecraft:variant": {
 					"value": 0
+				},
+				"minecraft:type_family": {
+					"family": [
+						"billboard_old",
+						"billboard",
+						"mob"
+					]
 				}
 			},
 			"bridge:is_altered": {
 				"minecraft:variant": {
 					"value": 1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"billboard_altered",
+						"billboard",
+						"mob"
+					]
 				}
 			}
 		},
 		"components": {
 			"minecraft:variant": {
 				"value": 0
-			},
-			"minecraft:interact": {
-				"interactions": {
-					"use_item": true,
-					"on_interact": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_equipment",
-									"domain": "hand",
-									"subject": "other",
-									"value": "bridge:spray"
-								}
-							]
-						},
-						"event": "bridge:set_altered",
-						"target": "self"
-					}
-				}
 			},
 			"minecraft:type_family": {
 				"family": [
@@ -66,7 +85,7 @@
 			},
 			"minecraft:collision_box": {
 				"width": 12,
-				"height": 6
+				"height": 8
 			},
 			"minecraft:pushable": {
 				"is_pushable": false,
@@ -75,6 +94,27 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:is_old"
+					]
+				}
+			},
+			"bridge:set_quest": {
+				"add": {
+					"component_groups": [
+						"bridge:is_quest"
+					]
+				}
+			},
 			"bridge:set_old": {
 				"add": {
 					"component_groups": [

@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:airship_empty",
+            "materials": {
+                "default": "alpha_block_color"
+            },
+            "textures": {
+                "default": "textures/entity/airship/stage_4_air_ship_2_texture"
+            },
+            "geometry": {
+                "default": "geometry.airship_nestorio"
+            },
+            "render_controllers": [
+                "controller.render.normal_car1"
+            ],
+            "spawn_egg": {
+                "base_color": "#1B64C3",
+                "overlay_color": "#FFFFFF"
+            }
+        }
+    }
+}

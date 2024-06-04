@@ -1,0 +1,122 @@
+	{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:bossquest",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:timer_set_diagoue_stage2": {
+				"minecraft:npc": {},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage2",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"bossquest_st2"
+					]
+				}
+			},
+			"bridge:timer_set_diagoue_stage4": {
+				"minecraft:npc": {},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:set_diagoue_stage4",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mob",
+						"bossquest_st4"
+					]
+				}
+			},
+			"bridge:started_quest": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"bridge:ended_quest": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"bossquest"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:set_stage2": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue_stage2"
+					]
+				}
+			},
+			"bridge:set_diagoue_stage2": {
+				"run_command": {
+					"command": "/dialogue change @s boss_quest_stage2_diag"
+				}
+			},
+			"bridge:set_stage4": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue_stage4"
+					]
+				}
+			},
+			"bridge:set_diagoue_stage4": {
+				"run_command": {
+					"command": "/dialogue change @s boss_quest_stage4_diag"
+				}
+			}
+		}
+	}
+}

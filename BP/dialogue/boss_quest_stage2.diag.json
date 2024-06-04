@@ -1,0 +1,20 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "boss_quest_stage2_diag",
+                "npc_name": "The Showdown at Sunset",
+                "text": "need boxing gloves",
+                "buttons": [
+                    {
+                        "name": "I'm ready",
+                        "commands": [
+                            "/tag @initiator[hasitem={item=bridge:boxing_gloves,quantity=1..2},c=1] add Boss2"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

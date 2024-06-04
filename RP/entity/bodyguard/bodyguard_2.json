@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "bridge:bodyguard_2",
+			"identifier": "bridge:bodyguard",
 			"materials": {
 				"default": "villager"
 			},

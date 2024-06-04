@@ -36,16 +36,79 @@
                             "stage1_main_3@all_quest.stage1_main_3": {}
                         },
                         {
+                            "stage2_main_1@all_quest.stage2_main_1": {}
+                        },
+                        {
+                            "stage2_main_1@all_quest.stage2_main_2": {}
+                        },
+                        {
+                            "stage2_main_1@all_quest.stage2_main_3": {}
+                        },
+                        {
+                            "stage3_main_1@all_quest.stage3_main_1": {}
+                        },
+                        {
+                            "stage3_main_2@all_quest.stage3_main_2": {}
+                        },
+                        {
+                            "stage4_main_1@all_quest.stage4_main_1": {}
+                        },
+                        {
+                            "stage4_main_2@all_quest.stage4_main_2": {}
+                        },
+                        {
+                            "stage5_main_1@all_quest.stage5_main_1": {}
+                        },
+                        {
+                            "stage5_main_2@all_quest.stage5_main_2": {}
+                        },
+                        {
                             "key_topic@all_quest.key_topic": {}
                         },
                         {
                             "stage1_key_1@all_quest.stage1_key_1": {}
                         },
                         {
+                            "stage2_key_1@all_quest.stage2_key_1": {}
+                        },
+                        {
+                            "stage3_key_1@all_quest.stage3_key_1": {}
+                        },
+                        {
+                            "stage4_key_1@all_quest.stage4_key_1": {}
+                        },
+                        {
+                            "stage4_key_2@all_quest.stage4_key_2": {}
+                        },
+                        {
+                            "stage4_key_3@all_quest.stage4_key_3": {}
+                        },
+                        {
+                            "stage5_key_1@all_quest.stage5_key_1": {}
+                        },
+                        {
                             "expand_topic@all_quest.expand_topic": {}
                         },
                         {
                             "stage1_expand_1@all_quest.stage1_expand_1": {}
+                        },
+                        {
+                            "stage2_expand_1@all_quest.stage2_expand_1": {}
+                        },
+                        {
+                            "stage3_expand_1@all_quest.stage3_expand_1": {}
+                        },
+                        {
+                            "stage3_expand_2@all_quest.stage3_expand_2": {}
+                        },
+                        {
+                            "stage4_expand_1@all_quest.stage4_expand_1": {}
+                        },
+                        {
+                            "stage4_expand_2@all_quest.stage4_expand_2": {}
+                        },
+                        {
+                            "stage5_expand_1@all_quest.stage5_expand_1": {}
                         }
                     ]
                 }
@@ -66,7 +129,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_main) = #text))",
+                "source_property_name": "(not((#text - main) = #text))",
                 "target_property_name": "#visible"
             }
         ]
@@ -85,7 +148,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_key) = #text))",
+                "source_property_name": "(not((#text - key) = #text))",
                 "target_property_name": "#visible"
             }
         ]
@@ -104,7 +167,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(not((#text - @@stage1_expand) = #text))",
+                "source_property_name": "(not((#text - expand) = #text))",
                 "target_property_name": "#visible"
             }
         ]
@@ -129,7 +192,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "((#text - @@1) = #text)",
+                "source_property_name": "((#text - @@1_1) = #text)",
                 "target_property_name": "#enabled"
             }
         ]
@@ -154,7 +217,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "((#text - @@2) = #text)",
+                "source_property_name": "((#text - @@1_2) = #text)",
                 "target_property_name": "#enabled"
             }
         ]
@@ -179,8 +242,434 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "((#text - @@3) = #text)",
+                "source_property_name": "((#text - @@1_3) = #text)",
                 "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage2_main_1": {
+        "type": "label",
+        "text": "- following the Organizer",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage2_main) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@2_1) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage2_main_2": {
+        "type": "label",
+        "text": "- hiring the first manager",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage2_main) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@2_2) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage2_main_3": {
+        "type": "label",
+        "text": "- buying a new range of cars",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage2_main) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@2_3) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage3_main_1": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "use_child_anchors": true,
+        "size": [
+            "100%c",
+            "100%sm"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage3_main) = #text))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_panel": {
+                    "type": "label",
+                    "text": "- setting factory",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "locked_color": "green",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@stage3_main) = #text))",
+                            "target_property_name": "#visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#text - @@3_1.5) = #text)",
+                            "target_property_name": "#enabled"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_1": {
+                    "type": "label",
+                    "text": "[0/5]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@3_1.0) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_2": {
+                    "type": "label",
+                    "text": "[1/5]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@3_1.1) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_3": {
+                    "type": "label",
+                    "text": "[2/5]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@3_1.2) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_4": {
+                    "type": "label",
+                    "text": "[3/5]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@3_1.3) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_5": {
+                    "type": "label",
+                    "text": "[4/5]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@3_1.4) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "stage3_main_2": {
+        "type": "label",
+        "text": "- activate the machine",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage3_main) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@3_2) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_main_1": {
+        "type": "label",
+        "text": "- steal an airship from a rival",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage4_main) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_1) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_main_2": {
+        "type": "label",
+        "text": "- go to the top of the new extension",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not((#text - @@stage4_main) = #text)) and (not((#text - @@4_1) = #text)))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_2) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage5_main_1": {
+        "type": "label",
+        "text": "- scout the rival's manufacturing plant",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not((#text - @@stage5_main) = #text)))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@5_1) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage5_main_2": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "use_child_anchors": true,
+        "size": [
+            "100%c",
+            "100%sm"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage5_main) = #text) and (not((#text - @@5_1) = #text)))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_panel": {
+                    "type": "label",
+                    "text": "- setting factory",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "locked_color": "green",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@stage5_main) = #text))",
+                            "target_property_name": "#visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#text - @@5_2.2) = #text)",
+                            "target_property_name": "#enabled"
+                        }
+                    ]
+                }
+            },
+            {
+                "main5_2_0": {
+                    "type": "label",
+                    "text": "[0/2]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@5_2.0) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main5_2_1": {
+                    "type": "label",
+                    "text": "[1/2]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@5_2.1) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -204,8 +693,359 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "((#text - @@4) = #text)",
+                "source_property_name": "((#text - @@1_4) = #text)",
                 "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage2_key_1": {
+        "type": "label",
+        "text": "- Billboard Hack",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "yellow",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage2_key) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@2_4) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage3_key_1": {
+        "type": "label",
+        "text": "- The Prototype Test",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "yellow",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage3_key) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@3_3) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_key_1": {
+        "type": "label",
+        "text": "- attach a paint gun to your airship",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage4_key) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_3) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_key_2": {
+        "type": "label",
+        "text": "- use the spray to paint your airship",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "green",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not((#text - @@stage4_key) = #text)) and (not((#text - @@4_3) = #text)))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_4) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_key_3": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "use_child_anchors": true,
+        "size": [
+            "100%c",
+            "100%sm"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not((#text - @@stage4_key) = #text)) and (not((#text - @@4_4) = #text)))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_panel": {
+                    "type": "label",
+                    "text": "- paint a rival's billboard",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "locked_color": "green",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@stage4_key) = #text)) and (not((#text - @@4_4) = #text)))",
+                            "target_property_name": "#visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#text - @@4_5.4) = #text)",
+                            "target_property_name": "#enabled"
+                        }
+                    ]
+                }
+            },
+            {
+                "main4_1_1": {
+                    "type": "label",
+                    "text": "[0/4]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@4_5.0) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main4_1_2": {
+                    "type": "label",
+                    "text": "[1/4]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@4_5.1) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main4_1_3": {
+                    "type": "label",
+                    "text": "[2/4]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@4_5.2) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main4_1_4": {
+                    "type": "label",
+                    "text": "[3/4]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@4_5.3) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "stage5_key_1": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "use_child_anchors": true,
+        "size": [
+            "100%c",
+            "100%sm"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage5_key) = #text))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_panel": {
+                    "type": "label",
+                    "text": "- Animal Assault",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "locked_color": "yellow",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@stage5_key) = #text))",
+                            "target_property_name": "#visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#text - @@5_3.3) = #text)",
+                            "target_property_name": "#enabled"
+                        }
+                    ]
+                }
+            },
+            {
+                "main5_1_0": {
+                    "type": "label",
+                    "text": "[0/3]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@5_3.0) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main5_1_1": {
+                    "type": "label",
+                    "text": "[1/3]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@5_3.1) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main5_1_2": {
+                    "type": "label",
+                    "text": "[2/3]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@5_3.2) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -229,7 +1069,310 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "((#text - @@5) = #text)",
+                "source_property_name": "((#text - @@1_5) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage2_expand_1": {
+        "type": "label",
+        "text": "- The Showdown at Sunset",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage2_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@2_5) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage3_expand_1": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "use_child_anchors": true,
+        "size": [
+            "100%c",
+            "100%sm"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage3_expand) = #text))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_panel": {
+                    "type": "label",
+                    "text": "- place dynamite",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "locked_color": "orange",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not((#text - @@stage3_expand) = #text))",
+                            "target_property_name": "#visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#text - @@3_4.6) = #text)",
+                            "target_property_name": "#enabled"
+                        }
+                    ]
+                }
+            },
+            {
+                "expand3_1_0": {
+                    "type": "label",
+                    "text": "[0/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.0) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "expand3_1_1": {
+                    "type": "label",
+                    "text": "[1/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.1) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "expand3_1_2": {
+                    "type": "label",
+                    "text": "[2/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.2) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "expand3_1_3": {
+                    "type": "label",
+                    "text": "[3/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.3) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_4": {
+                    "type": "label",
+                    "text": "[4/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.4) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "main3_1_5": {
+                    "type": "label",
+                    "text": "[5/6]",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "color": "white",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((not((#text - @@3_4.5) = #text)) and ((#text - @@3_4.6) = #text))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "stage3_expand_2": {
+        "type": "label",
+        "text": "- defeat Transformer car",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage3_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@3_5) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_expand_1": {
+        "type": "label",
+        "text": "- crash landing an airship",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage4_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_6) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage4_expand_2": {
+        "type": "label",
+        "text": "- confront the angry dealership owner",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage4_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@4_7) = #text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "stage5_expand_1": {
+        "type": "label",
+        "text": "- buy",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "color": "white",
+        "locked_color": "orange",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not((#text - @@stage5_expand) = #text))",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text - @@5_4) = #text)",
                 "target_property_name": "#enabled"
             }
         ]

@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.waypoint_guide": {
+            "initial_state": "on_start",
+            "states": {
+                "on_start": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "on_death": "!q.is_alive"
+                        }
+                    ]
+                },
+                "on_death": {
+                    "on_entry": [
+                        "/teleport @s ~ ~-1000 ~"
+                    ]
+                }
+            }
+        }
+    }
+}

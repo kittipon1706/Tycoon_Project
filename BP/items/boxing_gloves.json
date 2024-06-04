@@ -17,7 +17,17 @@
 			"minecraft:display_name": {
 				"value": "Boxing Gloves"
 			},
-			"minecraft:allow_off_hand": true
+			"minecraft:allow_off_hand": true,
+			"minecraft:damage": 2.5
+		},
+		"events": {
+			"bridge:increase_damage": {
+				"damage": {
+					"target": "other",
+					"amount": 5,
+					"type": "attack"
+				}
+			}
 		}
 	}
 }

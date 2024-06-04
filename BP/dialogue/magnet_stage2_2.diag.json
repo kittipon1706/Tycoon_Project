@@ -1,0 +1,12 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "magnet_stage2_diag_2_2",
+                "npc_name": "Magnet",
+                "text": "If you can beat my boxer, I will sell you my dealership."
+            }
+        ]
+    }
+}

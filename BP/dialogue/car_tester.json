@@ -1,0 +1,20 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "car_tester_diag",
+                "npc_name": "Car Tester",
+                "text": "DO you need to test your car?",
+                "buttons": [
+                    {
+                        "name": "Yes",
+                        "commands": [
+                            "/scriptevent q:select_car"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

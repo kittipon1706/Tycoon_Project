@@ -1,0 +1,125 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:waypoint_phototype_test",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:armor_stand"
+		},
+		"component_groups": {
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"bridge:is_active": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:type_family": {
+					"family": [
+						"waypoint_phototype_test",
+						"waypoint_phototype_test_active",
+						"mob"
+					]
+				},
+				"minecraft:entity_sensor": {
+					"relative_range": false,
+					"minimum_count": 1,
+					"maximum_count": 1,
+					"sensor_range": 5,
+					"event_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "test_car"
+					},
+					"event": "bridge:on_detect_car"
+				}
+			},
+			"bridge:is_inactive": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"waypoint_phototype_test",
+						"waypoint_phototype_test_inactive",
+						"mob"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"waypoint_phototype_test",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:is_inactive"
+					]
+				}
+			},
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:set_active": {
+				"add": {
+					"component_groups": [
+						"bridge:is_active"
+					]
+				}
+			},
+			"bridge:on_detect_car": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": "/execute as @e[family=waypoint_phototype_test_active,r=2,c=1] run event entity @e[family=waypoint_phototype_test_inactive,c=1] bridge:set_active"
+						}
+					},
+					{
+						"run_command": {
+							"command": "/scoreboard players add dummy test_state 1"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"bridge:set_despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

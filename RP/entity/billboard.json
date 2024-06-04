@@ -11,7 +11,7 @@
 				"type_2": "textures/entity/altered_billboard_tex"
 			},
 			"geometry": {
-				"default": "geometry.billboard_stage2"
+				"default": "geometry.billboard"
 			},
 			"render_controllers": [
 				"controller.render.billboard"

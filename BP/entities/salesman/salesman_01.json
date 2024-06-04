@@ -9,6 +9,16 @@
 			"runtime_identifier": "minecraft:villager"
 		},
 		"component_groups": {
+			"bridge:timer_set_diagoue": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:diagoue",
+						"target": "self"
+					}
+				}
+			},
 			"bridge:set_despawn": {
 				"minecraft:instant_despawn": {}
 			}
@@ -70,6 +80,20 @@
 				}
 			},
 			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"bridge:diagoue": {
 				"run_command": {
 					"command": "/dialogue change @s salesman_diag"
 				}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "boss_quest_stage4_diag",
+                "npc_name": "Showdown",
+                "text": "You have the confront an angry dealership owner and his security.",
+                "buttons": [
+                    {
+                        "name": "I'm ready",
+                        "commands": [
+                            "/function stage4/Expansion_Quest/set_boss_attack"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -6,15 +6,11 @@
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "minecraft:armor_stand"
+			"runtime_identifier": "minecraft:villager"
 		},
 		"component_groups": {
-			"bridge:transform_to_placed": {
-				"minecraft:transformation": {
-					"into": "bridge:dynamite_placed",
-					"begin_transform_sound": "death",
-					"transformation_sound": "ambient"
-				}
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
 			}
 		},
 		"components": {
@@ -35,28 +31,15 @@
 				"max": 20
 			},
 			"minecraft:collision_box": {
-				"width": 1,
-				"height": 1
-			},
-			"minecraft:interact": {
-				"interactions": {
-					"on_interact": {
-						"filters": {
-							"test": "is_family",
-							"subject": "other",
-							"value": "player"
-						},
-						"event": "bridge:transform",
-						"target": "self"
-					}
-				}
+				"width": 2,
+				"height": 2
 			}
 		},
 		"events": {
-			"bridge:transform": {
+			"bridge:despawn": {
 				"add": {
 					"component_groups": [
-						"bridge:transform_to_placed"
+						"bridge:set_despawn"
 					]
 				}
 			}

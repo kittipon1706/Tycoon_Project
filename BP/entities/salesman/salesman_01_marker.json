@@ -47,6 +47,12 @@
 			},
 			"minecraft:interact": {
 				"interactions": {
+					"use_item": true,
+					"particle_on_start": {
+						"particle_type": "minecraft:white_smoke_particle",
+						"particle_y_offset": 0.25,
+						"particle_offset_towards_interactor": true
+					},
 					"on_interact": {
 						"filters": {
 							"all_of": [
@@ -59,7 +65,7 @@
 									"test": "has_equipment",
 									"domain": "hand",
 									"subject": "other",
-									"value": "bridge:salesman1_egg"
+									"value": "bridge:salesman1_contract"
 								}
 							]
 						},

@@ -12,7 +12,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
             "minecraft:icon": {
-                "texture": "keys_car1"
+                "texture": "normal_car1_key"
             },
             "minecraft:display_name": {
                 "value": "Keys Car1"

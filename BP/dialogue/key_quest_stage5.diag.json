@@ -1,0 +1,12 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "key_quest_stage5_diag",
+                "npc_name": "The Showdown at Sunset",
+                "text": "This is where racers gather to see who's better. You can test your car's speed here. There are people waiting to serve you in front of the race track."
+            }
+        ]
+    }
+}

@@ -6,9 +6,77 @@
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "minecraft:armor_stand"
+			"runtime_identifier": "minecraft:villager",
+			"animations": {
+				"state_contraller": "controller.animation.waypoint_guide"
+			},
+			"scripts": {
+				"animate": [
+					"state_contraller"
+				]
+			}
 		},
 		"component_groups": {
+			"bridge:last_move_in": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": false,
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							}
+						},
+						{
+							"cause": "all",
+							"deals_damage": true,
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "expoorganizer"
+								},
+								"event": "bridge:varaint_3",
+								"target": "other"
+							}
+						}
+					]
+				}
+			},
+			"bridge:last_salesman": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": false,
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							}
+						},
+						{
+							"cause": "all",
+							"deals_damage": true,
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "expoorganizer"
+								},
+								"event": "bridge:varaint_4",
+								"target": "other"
+							}
+						}
+					]
+				}
+			},
 			"bridge:set_despawn": {
 				"minecraft:instant_despawn": {}
 			},
@@ -38,21 +106,28 @@
 						"waypoint_guid_stage2_true",
 						"mob"
 					]
-				},
-				"minecraft:entity_sensor": {
-					"relative_range": true,
-					"minimum_count": 1,
-					"sensor_range": 1,
-					"event_filters": {
-						"test": "is_family",
-						"subject": "other",
-						"value": "expoorganizer_move"
-					},
-					"event": "bridge:despawn"
 				}
 			}
 		},
 		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false,
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							}
+						}
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
 			"minecraft:variant": {
 				"value": 0
 			},
@@ -62,19 +137,12 @@
 					"waypoint_guid_stage2"
 				]
 			},
-			"minecraft:damage_sensor": {
-				"triggers": {
-					"cause": "all",
-					"deals_damage": false
-				}
-			},
 			"minecraft:health": {
-				"value": 20,
-				"max": 20
+				"value": 1
 			},
 			"minecraft:collision_box": {
 				"width": 0.1,
-				"height": 0.1
+				"height": 1.9
 			},
 			"minecraft:pushable": {
 				"is_pushable": false,
@@ -87,6 +155,20 @@
 				"add": {
 					"component_groups": [
 						"bridge:set_despawn"
+					]
+				}
+			},
+			"bridge:varaint_3": {
+				"add": {
+					"component_groups": [
+						"bridge:last_move_in"
+					]
+				}
+			},
+			"bridge:varaint_4": {
+				"add": {
+					"component_groups": [
+						"bridge:last_salesman"
 					]
 				}
 			},

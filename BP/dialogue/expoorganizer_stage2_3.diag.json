@@ -1,0 +1,27 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "expoorganizer_stage2_3_diag",
+                "npc_name": "Organizer",
+                "text": "Every time you upgrade your dealership, you must hire new salesman.",
+                "buttons": [
+                    {
+                        "name": "Okay",
+                        "commands": [
+                            "/teleport @a 228 -23 116 240",
+                            "/teleport @s 231 -23 109 30",
+                            "/dialogue change @s expoorganizer_stage2_4_diag"
+                        ]
+                    }
+                ],
+                "on_close_commands": [
+                    "/teleport @a 228 -23 116 240",
+                    "/teleport @s 231 -23 109 30",
+                    "/dialogue change @s expoorganizer_stage2_4_diag"
+                ]
+            }
+        ]
+    }
+}

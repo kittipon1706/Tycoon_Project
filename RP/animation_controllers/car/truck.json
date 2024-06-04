@@ -1,0 +1,65 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.truck": {
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "animations": [
+                        "spawn"
+                    ],
+                    "sound_effects": [
+                        {
+                            "effect": "start_sound"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "stop": "query.all_animations_finished == true"
+                        }
+                    ]
+                },
+                "stop": {
+                    "sound_effects": [
+                        {
+                            "effect": "turn_off_sound"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "moving": "query.ground_speed"
+                        },
+                        {
+                            "unlocking": "query.variant == 2"
+                        }
+                    ]
+                },
+                "moving": {
+                    "sound_effects": [
+                        {
+                            "effect": "move_sound"
+                        }
+                    ],
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "stop": "!query.ground_speed"
+                        }
+                    ]
+                },
+                "unlocking": {
+                    "animations": [
+                        "fix"
+                    ],
+                    "transitions": [
+                        {
+                            "stop": "query.variant == 3"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

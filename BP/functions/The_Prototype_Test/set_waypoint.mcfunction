@@ -1,0 +1,19 @@
+summon bridge:waypoint_phototype_test -22 -24 77 
+summon bridge:waypoint_phototype_test -22 -24 59 
+summon bridge:waypoint_phototype_test -22 -24 41
+summon bridge:waypoint_phototype_test -22 -24 23
+summon bridge:waypoint_phototype_test -22 -24 5
+summon bridge:waypoint_phototype_test -22 -24 -13
+summon bridge:waypoint_phototype_test -24 -24 -30
+summon bridge:waypoint_phototype_test -42 -24 -30
+summon bridge:waypoint_phototype_test -44 -24 -13
+summon bridge:waypoint_phototype_test -44 -24 5
+summon bridge:waypoint_phototype_test -44 -24 23
+summon bridge:waypoint_phototype_test -44 -24 41
+summon bridge:waypoint_phototype_test -44 -24 59
+summon bridge:waypoint_phototype_test -44 -24 77
+summon bridge:waypoint_phototype_test -44 -24 94
+summon bridge:waypoint_phototype_test -44 -24 111
+summon bridge:waypoint_phototype_test -33 -24 121
+summon bridge:waypoint_phototype_test -22 -24 111
+event entity @e[family=waypoint_phototype_test,c=1,x=-22,y=-24,z=77] bridge:set_active

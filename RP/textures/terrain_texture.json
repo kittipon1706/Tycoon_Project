@@ -16,8 +16,29 @@
 		"bridge_test_2": {
 			"textures": "textures/blocks/test_2"
 		},
-		"bridge_shop_shelf": {
-			"textures": "textures/blocks/stage_1_shop_shelf_1_texture"
+		"bridge_control_panel_1": {
+			"textures": "textures/blocks/control_panel/stage_3_control_panel_1_texture"
+		},
+		"bridge_control_panel_1_ani": {
+			"textures": "textures/blocks/control_panel/stage_3_ani_control_panel_1_texture"
+		},
+		"bridge_control_panel_2": {
+			"textures": "textures/blocks/control_panel/stage_3_control_panel_2_texture"
+		},
+		"bridge_control_panel_2_ani": {
+			"textures": "textures/blocks/control_panel/stage_3_ani_control_panel_2_texture"
+		},
+		"bridge_control_panel_3": {
+			"textures": "textures/blocks/control_panel/stage_3_control_panel_3_texture"
+		},
+		"bridge_control_panel_3_ani": {
+			"textures": "textures/blocks/control_panel/stage_3_ani_control_panel_3_texture"
+		},
+		"bridge_control_panel_4": {
+			"textures": "textures/blocks/control_panel/stage_3_control_panel_4_texture"
+		},
+		"bridge_control_panel_4_ani": {
+			"textures": "textures/blocks/control_panel/stage_3_ani_control_panel_4_texture"
 		}
 	}
 }

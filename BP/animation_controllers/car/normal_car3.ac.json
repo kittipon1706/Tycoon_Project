@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.normal_car3": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "sold": "query.variant == 1"
+                        }
+                    ]
+                },
+                "sold": {
+                    "on_entry": [
+                        "/replaceitem entity @e[family=customer1_paid,c=1] slot.weapon.mainhand 1 bridge:keys_car3",
+                        "/execute if entity @s[family=my_onsell_car] run scoreboard players add dummy money 200"
+                    ]
+                }
+            }
+        }
+    }
+}

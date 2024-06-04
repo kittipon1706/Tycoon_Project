@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.boss_st4": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "on_entry": [],
+                    "transitions": [
+                        {
+                            "death": "!query.is_alive"
+                        }
+                    ]
+                },
+                "death": {
+                    "on_entry": [
+                        "/function stage4/Expansion_Quest/on_clear_expansionquest_stage4"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 {
 	"values": [
 		"initialise",
-		"everytick"
+		"everytick",
+		"on_first_join"
 	]
 }

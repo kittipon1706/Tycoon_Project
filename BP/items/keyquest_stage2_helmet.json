@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "bridge:keyquest_stage2_helmet",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "stage2_helmet"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "stage2_pass_id"
+                ]
+            },
+            "minecraft:display_name": {
+                "value": "Stage2 Helmet"
+            },
+            "minecraft:max_stack_size": 1,
+            // Helm enchantment slot
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_head"
+            },
+            // Wearable head slot
+            "minecraft:wearable": {
+                "dispensable": true,
+                "slot": "slot.armor.head"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "bridge:waypoint_customer1_paid3",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "type_1": "textures/black",
+                "type_2": "textures/blank"
+            },
+            "geometry": {
+                "default": "geometry.keyquest"
+            },
+            "render_controllers": [
+                "controller.render.waypoint"
+            ],
+            "scripts": {},
+            "spawn_egg": {
+                "base_color": "#814B27",
+                "overlay_color": "#DDD1D1"
+            }
+        }
+    }
+}

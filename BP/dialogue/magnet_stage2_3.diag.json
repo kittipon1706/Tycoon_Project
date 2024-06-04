@@ -1,0 +1,26 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "magnet_stage2_diag_2_3",
+                "npc_name": "Magnet",
+                "text": "I give up (you can expand your shop by spending 30000)",
+                "buttons": [
+                    {
+                        "name": "I'm ready",
+                        "commands": [
+                            "/execute if score dummy money matches 30000.. run scoreboard players set dummy st2_expansionquest_clear 1",
+                            "/execute if score dummy money matches 30000.. run scoreboard players remove dummy money 30000",
+                            "/execute if score dummy money matches 30000.. run tp @a 125 -23 119 90"
+                        ]
+                    },
+                    {
+                        "name": "No",
+                        "commands": []
+                    }
+                ]
+            }
+        ]
+    }
+}

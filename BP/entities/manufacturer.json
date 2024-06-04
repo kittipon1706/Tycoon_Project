@@ -16,14 +16,23 @@
 				]
 			}
 		},
-		"component_groups": {},
+		"component_groups": {
+			"bridge:timer_set_diagoue": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "bridge:diagoue",
+						"target": "self"
+					}
+				}
+			},
+			"bridge:set_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
 		"components": {
 			"minecraft:npc": {},
-			"minecraft:economy_trade_table": {
-				"display_name": "Car trader",
-				"table": "trading/economy_trades/manufacturer.json",
-				"new_screen": true
-			},
 			"minecraft:behavior.trade_with_player": {
 				"priority": 1
 			},
@@ -61,14 +70,41 @@
 				"priority": 0
 			},
 			"minecraft:behavior.look_at_player": {
-				"priority": 9,
+				"priority": 1,
 				"look_distance": 8,
-				"probability": 0.02
+				"probability": 1
 			},
 			"minecraft:behavior.random_look_around": {
 				"priority": 8
 			}
 		},
-		"events": {}
+		"events": {
+			"bridge:despawn": {
+				"add": {
+					"component_groups": [
+						"bridge:set_despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"bridge:timer_set_diagoue"
+					]
+				}
+			},
+			"bridge:diagoue": {
+				"run_command": {
+					"command": "/dialogue change @s manufacturer_diag"
+				}
+			}
+		}
 	}
 }

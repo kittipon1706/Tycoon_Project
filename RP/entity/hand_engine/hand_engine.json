@@ -1,0 +1,24 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:hand_engine",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/hand_engine_tex"
+			},
+			"geometry": {
+				"default": "geometry.hand_engine"
+			},
+			"render_controllers": [
+				"controller.render.hand_engine"
+			],
+			"spawn_egg": {
+				"base_color": "#CC752E",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

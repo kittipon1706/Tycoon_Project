@@ -1,0 +1,340 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bridge:truck",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "bridge:is_empty": {
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "truck",
+                        "truck_empty",
+                        "player_car"
+                    ]
+                }
+            },
+            "bridge:is_fill": {
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "truck",
+                        "truck_fill",
+                        "player_car"
+                    ]
+                }
+            },
+            "bridge:tamed": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 1.5,
+                    "time_down_event": {
+                        "event": "bridge:set_rideable"
+                    }
+                }
+            },
+            "bridge:set_despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "bridge:ridder_controlable": {
+                "minecraft:input_ground_controlled": {}
+            },
+            "bridge:moveable": {
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+            "bridge:not_moveable": {
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "bridge:shop_sellable": {
+                "minecraft:type_family": {
+                    "family": [
+                        "onsell_car",
+                        "shop_onsell_car",
+                        "truck",
+                        "car",
+                        "mob"
+                    ]
+                },
+                "minecraft:interact": {
+                    "interactions": [
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_family",
+                                            "subject": "self",
+                                            "value": "shop_onsell_car"
+                                        },
+                                        {
+                                            "test": "is_family",
+                                            "subject": "other",
+                                            "value": "player"
+                                        }
+                                    ]
+                                },
+                                "event": "bridge:give_keys",
+                                "target": "self"
+                            }
+                        }
+                    ]
+                }
+            },
+            "bridge:rideable": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:rideable": {
+                    "seat_count": 3,
+                    "interact_text": "action.interact.ride.car",
+                    "controlling_seat": 0,
+                    "family_types": [
+                        "player",
+                        "animal"
+                    ],
+                    "seats": [
+                        {
+                            "position": [
+                                0.8,
+                                0.8,
+                                0.8
+                            ]
+                        },
+                        {
+                            "position": [
+                                0.8,
+                                0.8,
+                                -0.8
+                            ],
+                            "lock_rider_rotation": 90
+                        },
+                        {
+                            "position": [
+                                -0.8,
+                                0.8,
+                                -0.8
+                            ],
+                            "lock_rider_rotation": 90
+                        }
+                    ]
+                }
+            },
+            "bridge:is_player_car": {
+                "minecraft:type_family": {
+                    "family": [
+                        "car",
+                        "player_car",
+                        "truck",
+                        "mob"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:knockback_resistance": {
+                "value": 100
+            },
+            "minecraft:movement": {
+                "value": 0.5
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:collision_box": {
+                "width": 4.8,
+                "height": 1.9
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "car",
+                    "player_car",
+                    "truck",
+                    "mob"
+                ]
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "all_of": [
+                                            {
+                                                "test": "is_family",
+                                                "subject": "self",
+                                                "value": "player_car"
+                                            },
+                                            {
+                                                "test": "is_variant",
+                                                "operator": "!=",
+                                                "value": 3
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "all_of": [
+                                            {
+                                                "test": "is_family",
+                                                "subject": "self",
+                                                "value": "player_car"
+                                            },
+                                            {
+                                                "test": "is_sneaking",
+                                                "subject": "other",
+                                                "value": true
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "event": "bridge:set_tamed"
+                        }
+                    }
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            }
+        },
+        "events": {
+            "bridge:set_empty": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_empty"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:is_fill"
+                    ]
+                }
+            },
+            "bridge:set_fill": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_fill"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:is_empty"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_player_car"
+                    ]
+                }
+            },
+            "bridge:set_player_car": {
+                "add": {
+                    "component_groups": [
+                        "bridge:is_player_car"
+                    ]
+                }
+            },
+            "bridge:despawn": {
+                "add": {
+                    "component_groups": [
+                        "bridge:set_despawn"
+                    ]
+                }
+            },
+            "bridge:set_tamed": {
+                "add": {
+                    "component_groups": [
+                        "bridge:tamed"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                }
+            },
+            "bridge:set_rideable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:rideable",
+                        "bridge:ridder_controlable"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "bridge:tamed"
+                    ]
+                }
+            },
+            "bridge:set_shop_sellable": {
+                "add": {
+                    "component_groups": [
+                        "bridge:shop_sellable"
+                    ]
+                }
+            },
+            "bridge:set_can_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:moveable"
+                    ]
+                }
+            },
+            "bridge:set_can_not_move": {
+                "add": {
+                    "component_groups": [
+                        "bridge:not_moveable"
+                    ]
+                }
+            },
+            "bridge:give_keys": {
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command": "/execute if score dummy money matches 1000.. run give @p bridge:keys_truck 1"
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": "/execute if score dummy money matches 1000.. run scoreboard players remove dummy money 1000"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
